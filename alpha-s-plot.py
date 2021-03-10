@@ -21,7 +21,7 @@ pygaps.plot_iso([isotherm_ref, model], branch='ads')
 #plt.show()
 #model.print_info(logx=False)
 import numpy
-pressure_range=numpy.linspace(1.0e-08, 1.00, 1000)
+pressure_range=numpy.linspace(1.0e-09, 1.00, 1000)
 new_point_isotherm=pygaps.PointIsotherm.from_modelisotherm(
     model,
     pressure_range,
