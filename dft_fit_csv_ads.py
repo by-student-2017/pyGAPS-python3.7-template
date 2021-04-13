@@ -40,10 +40,10 @@ supermicropore = 0.0
 micropore = 0.0
 macropore = 0.0
 #
-ndfds[0,3] = (ndfds[0,2] - 0.0)/ndfds[0,0]*1000.0
+ndfds[0,3] = (ndfds[0,2] - 0.0)/(ndfds[0,0]/2.0)*1000.0
 ndfds[0,4] = ndfds[0,3]
 for num in range(1,len(ndfds)):
-  ndfds[num,3] = (ndfds[num,2] - ndfds[num-1,2])/ndfds[num,0]*1000.0
+  ndfds[num,3] = (ndfds[num,2] - ndfds[num-1,2])/(ndfds[num,0]/2.0)*1000.0
   ndfds[num,4] = ndfds[num-1,4] + ndfds[num,3]
   if (ndfds[num,0] < 0.7):    # < 0.7 nm: ultra-micropore
     ultramicropore = ultramicropore + ndfds[num,3]
@@ -71,10 +71,10 @@ ax1.set_ylabel('Incremental Surface Area $(m^{2}/g)$')
 ax2.plot(x, y2, label="Cumulative ds", color='red', linestyle="--")
 ax2.set_ylabel('Cumulative ds $(m^{2}/g)$') 
 #
-plt.grid()
 plt.title("PSD plot NLDFT (carbon slit)")
 plt.xlabel("Pore size (nm)")
 plt.xscale("log")
+plt.grid()
 plt.show()
 
 # set name of columns
