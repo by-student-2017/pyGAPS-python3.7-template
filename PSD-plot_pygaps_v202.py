@@ -48,6 +48,7 @@ elif micro_method == "HK_MOF":
         adsorbent_model='AlSiOxideIon',
         adsorbate_model=adsorbate_params,
         verbose=False)
+
 else:
     print('ERROR!:')
 
@@ -83,7 +84,8 @@ else:
 
 
 # Comparing all the PSD methods
-from pygaps.graphing.calcgraph import psd_plot
+from pygaps.graphing.calcgraph import psd_plot # version 2.0.2
+#from pygaps.graphing.calc_graphs import psd_plot # version 3.0.3
 ax = psd_plot(result_dict_dft['pore_widths'], result_dict_dft['pore_distribution'],
               method='comparison', labeldiff='NLDFT', labelcum=None, left=0.4, right=8)
 ax.plot(result_dict_micro['pore_widths'], result_dict_micro['pore_distribution'], label='microporous ('+micro_method+')')
