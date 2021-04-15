@@ -87,7 +87,7 @@ text += "The BET method overestimates the specific surface area of super-micropo
 text += "Since the BET model assumes multi-layer adsorption, it holds only for pores larger than mesopores. In addition, the pore surface area tends to be overestimated because the interaction from the solid surface acting on the second and subsequent layers is ignored. \n"
 text += "total ds: "+"{:.2f}".format(ndfds[len(ndfds)-1,4]+supermicropore*0.5)+" [m^2/g] (super-micropore*1.5) \n"
 text += "***************************************************************************************************\n"
-fileobj = open("./plot/info.txt",'w')
+fileobj = open("./plot/info_ads.txt",'w')
 fileobj.write(text)
 #
 x = ndfds[:,0]
