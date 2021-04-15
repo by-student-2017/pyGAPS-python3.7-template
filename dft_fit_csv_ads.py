@@ -18,9 +18,9 @@ result_dict_dft = pygaps.psd_dft(
 
 # plot
 fig1 = plt.figure(1)
-fig1.savefig('./plot/NLDFT_ADS_Fit.jpg')
+fig1.savefig('./plot/NLDFT_ADS_No1.jpg')
 fig2 = plt.figure(2)
-fig2.savefig('./plot/NLDFT_ADS.jpg')
+fig2.savefig('./plot/NLDFT_ADS_No2.jpg')
 plt.show()
 
 #import pprint

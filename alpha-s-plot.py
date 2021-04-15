@@ -38,8 +38,10 @@ result_dict = pygaps.alpha_s(isotherm, reference_isotherm=model_ref, limits=(2, 
 #                             reducing_pressure=0.4, limits=(0.6, 0.8), verbose=True)
 
 # plot
+fig1 = plt.figure(1)
+fig1.savefig('./plot/alpha-s-plot_No1.jpg')
 fig2 = plt.figure(2)
-fig2.savefig('./plot/alpha-s-plot.jpg')
+fig2.savefig('./plot/alpha-s-plot_No2.jpg')
 plt.show()
 
 # import pprint

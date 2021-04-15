@@ -17,6 +17,10 @@ result_dict_dft = pygaps.psd_dft(
     verbose=True)
 
 # plot
+fig1 = plt.figure(1)
+fig1.savefig('./plot/NLDFT_No1.jpg')
+fig2 = plt.figure(2)
+fig2.savefig('./plot/NLDFT_No2.jpg')
 plt.show()
 
 # import pprint
