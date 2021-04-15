@@ -54,10 +54,18 @@ for num in range(1,len(ndfds)):
   else:                       # > 50 nm: macropore
     macropore = macropore + ndfds[num,3]
 #
+print("***************************************************************************************************")
 print("ultra-micropore: %7.2f [m^2/g] (w < 0.7 nm)" % (ultramicropore))
 print("super-micropore: %7.2f [m^2/g] (0.7 =< w < 2.0 nm)" % (supermicropore))
 print("micropore: %7.2f [m^2/g], Attention!!! limited range (2-10 nm)" % (micropore))
 print("total ds: %7.2f [m^2/g], Attention!!! limited range (0.4 =< w =< 10 nm)" % (ndfds[len(ndfds)-1,4]))
+print("***************************************************************************************************")
+print("Note")
+print("The BET method underestimates the specific surface area of ultra-micropore region.")
+print("The BET method overestimates the specific surface area of super-micropore region by up to 50%.")
+print("Since the BET model assumes multi-layer adsorption, it holds only for pores larger than mesopores. In addition, the pore surface area tends to be overestimated because the interaction from the solid surface acting on the second and subsequent layers is ignored. ")
+print("total ds: %7.2f [m^2/g] (super-micropore*1.5)" % (ndfds[len(ndfds)-1,4]+supermicropore*0.5))
+print("***************************************************************************************************")
 #
 x = ndfds[:,0]
 y = ndfds[:,3]
@@ -72,7 +80,7 @@ ax2.plot(x, y2, label="Cumulative ds", color='red', linestyle="--")
 ax2.set_ylabel('Cumulative ds $(m^{2}/g)$') 
 #
 plt.grid()
-plt.title("PSD plot NLDFT (carbon slit)")
+plt.title("PSD plot NLDFT (carbon slit), DES")
 plt.xlabel("Pore size (nm)")
 plt.xscale("log")
 plt.show()
