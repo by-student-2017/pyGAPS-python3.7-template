@@ -98,4 +98,4 @@ ndf.columns = ['pore_widths_nm', 'pore_distribution', 'pore_volume_cumulative_cm
 # output window and excel file
 import pprint
 pprint.pprint(ndf)
-ndf.to_csv("result_dft_des.csv", index=False)
+ndf.to_csv("./plot/dft_des.csv", index=False)
