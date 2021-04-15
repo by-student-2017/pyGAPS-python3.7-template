@@ -6,7 +6,7 @@ path = r'case.csv'
 
 # import the isotherm
 isotherm = pygaps.isotherm_from_csv(path)
-isotherm.print_info()
+#isotherm.print_info()
 
 # fitting on DFT kernel
 result_dict_dft = pygaps.psd_dft(

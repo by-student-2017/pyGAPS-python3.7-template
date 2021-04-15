@@ -6,7 +6,7 @@ path = r'case.csv'
 
 # import the isotherm
 isotherm = pygaps.isotherm_from_csv(path)
-isotherm.print_info()
+#isotherm.print_info()
 
 # DR (Dubinin-Radushkevich) plot
 result_dict = pygaps.dr_plot(isotherm, verbose=True)

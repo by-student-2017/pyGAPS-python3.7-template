@@ -12,7 +12,7 @@ path = r'case.csv'
 
 # import the isotherm
 isotherm = pygaps.isotherm_from_csv(path)
-isotherm.print_info()
+#isotherm.print_info()
 
 # PSO (Pore size distribution)
 # https://pygaps.readthedocs.io/en/master/examples/psd.html

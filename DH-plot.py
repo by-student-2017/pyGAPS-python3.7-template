@@ -6,7 +6,7 @@ path = r'case.csv'
 
 # import the isotherm
 isotherm = pygaps.isotherm_from_csv(path)
-isotherm.print_info()
+#isotherm.print_info()
 
 # DH plot
 result_dict = pygaps.psd_mesoporous(

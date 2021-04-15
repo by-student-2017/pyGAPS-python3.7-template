@@ -7,7 +7,7 @@ path = r'case.csv'
 
 # import the isotherm
 isotherm = pygaps.isotherm_from_csv(path)
-isotherm.print_info()
+#isotherm.print_info()
 
 pygaps.area_BET(isotherm, verbose=True)
 #pygaps.area_BET(isotherm, limits=(0.05, 0.2), verbose=True)
