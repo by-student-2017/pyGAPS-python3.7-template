@@ -6,7 +6,7 @@ path = r'case.csv'
 
 # import the isotherm
 isotherm = pygaps.isotherm_from_csv(path)
-#isotherm.print_info()
+isotherm.print_info()
 
 # fitting on DFT kernel
 result_dict_dft = pygaps.psd_dft(
@@ -18,9 +18,9 @@ result_dict_dft = pygaps.psd_dft(
 
 # plot
 fig1 = plt.figure(1)
-fig1.savefig('./plot/NLDFT_DES_No1.jpg')
+fig1.savefig('./plot/NLDFT_DES_Fit.jpg')
 fig2 = plt.figure(2)
-fig2.savefig('./plot/NLDFT_DES_No2.jpg')
+fig2.savefig('./plot/NLDFT_DES.jpg')
 plt.show()
 
 # import pprint
@@ -59,6 +59,7 @@ for num in range(1,len(ndfds)):
     macropore = macropore + ndfds[num,3]
 #
 print("***************************************************************************************************")
+print("pecific surface area")
 print("ultra-micropore: %7.2f [m^2/g] (w < 0.7 nm)" % (ultramicropore))
 print("super-micropore: %7.2f [m^2/g] (0.7 =< w < 2.0 nm)" % (supermicropore))
 print("micropore: %7.2f [m^2/g], Attention!!! limited range (2-10 nm)" % (micropore))
@@ -70,6 +71,24 @@ print("The BET method overestimates the specific surface area of super-micropore
 print("Since the BET model assumes multi-layer adsorption, it holds only for pores larger than mesopores. In addition, the pore surface area tends to be overestimated because the interaction from the solid surface acting on the second and subsequent layers is ignored. ")
 print("total ds: %7.2f [m^2/g] (super-micropore*1.5)" % (ndfds[len(ndfds)-1,4]+supermicropore*0.5))
 print("***************************************************************************************************")
+#
+text  = "***************************************************************************************************\n"
+text += "NLDFT (carbon slit model), DES) \n"
+text += "\n"
+text += "specific surface area \n"
+text += "ultra-micropore: "+str(ultramicropore)+" [m^2/g] (w < 0.7 nm) \n"
+text += "super-micropore: "+str(supermicropore)+" [m^2/g] (0.7 =< w < 2.0 nm) \n"
+text += "micropore: "+str(micropore)+" [m^2/g], Attention!!! limited range (2-10 nm) \n"
+text += "total ds: "+str(ndfds[len(ndfds)-1,4])+" [m^2/g], Attention!!! limited range (0.4 =< w =< 10 nm) \n"
+text += "************************************************\n"
+text += "Note \n"
+text += "The BET method underestimates the specific surface area of ultra-micropore region. \n"
+text += "The BET method overestimates the specific surface area of super-micropore region by up to 50%. \n"
+text += "Since the BET model assumes multi-layer adsorption, it holds only for pores larger than mesopores. In addition, the pore surface area tends to be overestimated because the interaction from the solid surface acting on the second and subsequent layers is ignored. \n"
+text += "total ds: "+str(ndfds[len(ndfds)-1,4]+supermicropore*0.5)+" [m^2/g] (super-micropore*1.5) \n"
+text += "***************************************************************************************************\n"
+fileobj = open("./plot/info.txt",'w')
+fileobj.write(text)
 #
 x = ndfds[:,0]
 y = ndfds[:,3]
@@ -98,4 +117,4 @@ ndf.columns = ['pore_widths_nm', 'pore_distribution', 'pore_volume_cumulative_cm
 # output window and excel file
 import pprint
 pprint.pprint(ndf)
-ndf.to_csv("./plot/dft_des.csv", index=False)
+ndf.to_csv("result_dft_des.csv", index=False)
