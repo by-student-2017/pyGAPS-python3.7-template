@@ -93,6 +93,8 @@ ax.plot(result_dict_meso['pore_widths'], result_dict_meso['pore_distribution'], 
 ax.legend(loc='best')
 
 # plot
+fig1 = plt.figure(1)
+fig1.savefig('./plot/PSD-plot.jpg')
 plt.show()
 
 # import pprint

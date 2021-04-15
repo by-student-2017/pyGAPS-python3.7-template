@@ -8,16 +8,8 @@ path = r'case.csv'
 isotherm = pygaps.isotherm_from_csv(path)
 isotherm.print_info()
 
-# Langmuir plot
-result_dict = pygaps.area_langmuir(isotherm, verbose=True)
-#result_dict = pygaps.area_langmuir(isotherm, limits=(0.05, 0.3), verbose=True)
-
-# plot
+pygaps.area_langmuir(isotherm, verbose=True)
+#pygaps.area_langmuir(isotherm, limits=(0.05, 0.3), verbose=True)
+fig1 = plt.figure(1)
+fig1.savefig('./plot/Langmuir-plot.jpg')
 plt.show()
-
-# import pprint
-# pprint.pprint(result_dict)
-
-import pandas as pd
-df = pd.DataFrame(result_dict)
-df.to_csv("result_Langmuir.csv", index=False)

@@ -14,6 +14,8 @@ result_dict = pygaps.t_plot(isotherm, verbose=True)
 #              limits=(0.3,0.44), verbose=True)
 
 # plot
+fig1 = plt.figure(1)
+fig1.savefig('./plot/t-plot.jpg')
 plt.show()
 
 import pprint

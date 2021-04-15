@@ -13,15 +13,13 @@ def carbon_model(relative_p):
     return 0.88*(relative_p**2) + 6.45*relative_p + 2.98
 
 # t-plot
-result_dict = pygaps.t_plot(isotherm, thickness_model=carbon_model, limits=(5.5,8.5), verbose=True)
-#result_dict = pygaps.t_plot(isotherm, thickness_model=carbon_model, limits=(4.5,6.5), verbose=True)
-#result_dict = pygaps.t_plot(isotherm, thickness_model=carbon_model, limits=(3.5,5.5), verbose=True)
+result_dict = pygaps.t_plot(isotherm, thickness_model=carbon_model, limits=(4.5,6.5), verbose=True)
 #result_dict = pygaps.t_plot(isotherm, thickness_model=carbon_model,
 #              limits=(0.3,0.44), verbose=True)
 
 # plot
 fig1 = plt.figure(1)
-fig1.savefig('./plot/t-plot_Ref_CB.jpg')
+fig1.savefig('./plot/t-plot_Ref_CB_a2.jpg')
 plt.show()
 
 import pprint

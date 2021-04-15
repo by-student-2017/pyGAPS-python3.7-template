@@ -17,6 +17,10 @@ result_dict_dft = pygaps.psd_dft(
     verbose=True)
 
 # plot
+fig1 = plt.figure(1)
+fig1.savefig('./plot/NLDFT_ADS_Fit.jpg')
+fig2 = plt.figure(2)
+fig2.savefig('./plot/NLDFT_ADS.jpg')
 plt.show()
 
 #import pprint
@@ -83,6 +87,8 @@ plt.title("PSD plot NLDFT (carbon slit), ADS")
 plt.xlabel("Pore size (nm)")
 plt.xscale("log")
 plt.grid()
+fig1 = plt.figure(1)
+fig1.savefig('./plot/NLDFT_deltaS_ADS.jpg')
 plt.show()
 
 # set name of columns
