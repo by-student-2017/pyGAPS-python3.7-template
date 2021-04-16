@@ -1,6 +1,9 @@
 # pyGAPS-python3.7-template
 
 
+## tested with Ubumtu 20.04 LTS, Ubuntu 18.04 LTS and Windows 10.
+
+
 ## Install
 1. cd ~
 2. sudo apt update
