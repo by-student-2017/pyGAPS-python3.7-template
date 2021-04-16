@@ -36,4 +36,15 @@
 5. (plase install XLaunch)
 
 
+# case.csv (input condition and data) [P/P0 vs. cm^3 (STP)]
+	iso_type,Isotherme
+	is_real,true
+	pressure_mode,relative
+	pressure_unit,bar
+	loading_basis,molar
+	loading_unit,cm3(STP)
+	adsorbent_basis,mass
+	adsorbent_unit,g
+
+
 Maybe, PSD-plot_pygaps_v303.py is for python 3.9.
