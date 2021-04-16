@@ -36,7 +36,7 @@
 5. (plase install XLaunch)
 
 
-# case.csv (input condition and data) [P/P0 vs. cm^3 (STP)]
+## case.csv (input condition and data) [P/P0 vs. cm^3 (STP)]
 	iso_type,Isotherme
 	is_real,true
 	pressure_mode,relative
