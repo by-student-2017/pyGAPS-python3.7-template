@@ -24,8 +24,8 @@ fig1 = plt.figure(1)
 fig1.savefig('./plot/t-plot_Ref_CB.jpg')
 plt.show()
 
-import pprint
-pprint.pprint(result_dict)
+#import pprint
+#pprint.pprint(result_dict)
 
 #import pandas as pd
 #df = pd.DataFrame(result_dict)

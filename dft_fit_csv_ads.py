@@ -115,6 +115,6 @@ ndf = pd.DataFrame(ndfds)
 ndf.columns = ['pore_widths_nm', 'pore_distribution', 'pore_volume_cumulative_cm^3g^-1', 'ds_m^2g^-1', 'cumulative_ds']
 
 # output window and excel file
-import pprint
-pprint.pprint(ndf)
+#import pprint
+#pprint.pprint(ndf)
 ndf.to_csv("result_dft_ads.csv", index=False)
