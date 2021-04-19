@@ -100,7 +100,7 @@ ax2 = ax1.twinx()
 ax1.plot(x, y, label="ds", color='black')
 ax1.set_xlabel("Pore size (nm)")
 ax1.set_ylabel('Incremental Surface Area $(m^{2}/g)$')
-ax2.plot(x, y2, label="Cumulative ds", color='red', linestyle="--")
+ax2.plot(x, y2, label="Cumulative Surface Area", color='red', linestyle="--")
 ax2.set_ylabel('Cumulative Surface Area $(m^{2}/g)$') 
 #
 plt.title("PSD plot NLDFT (carbon slit), ADS")
