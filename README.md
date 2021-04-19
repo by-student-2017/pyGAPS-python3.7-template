@@ -31,7 +31,7 @@
 ## Usage -3-
 1. cd ~/pyGAPS-python3.7-template
 2. ./run_sequential.sh
-3. (see plot directory)
+3. (see plot_sequential directory)
 4. (write your data on case.csv in sequential_data, please.)
 
 
