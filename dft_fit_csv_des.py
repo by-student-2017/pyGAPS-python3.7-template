@@ -59,7 +59,7 @@ for num in range(1,len(ndfds)):
     macropore = macropore + ndfds[num,3]
 #
 print("***************************************************************************************************")
-print("pecific surface area")
+print("specific surface area")
 print("ultra-micropore: %7.2f [m^2/g] (w < 0.7 nm)" % (ultramicropore))
 print("super-micropore: %7.2f [m^2/g] (0.7 =< w < 2.0 nm)" % (supermicropore))
 print("micropore: %7.2f [m^2/g], Attention!!! limited range (2-10 nm)" % (micropore))
