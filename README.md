@@ -28,6 +28,13 @@
 4. (write your data on case.csv, please.)
 
 
+## Usage -3-
+1. cd ~/pyGAPS-python3.7-template
+2. ./run_sequential.sh
+3. (see plot directory)
+4. (write your data on case.csv in sequential_data, please.)
+
+
 ## Ubuntu 20.04 LTS (WSL version case)
 1. sudo apt install x11-apps
 2. echo 'export DISPLAY=localhost:0.0' >> ~/.bashrc
@@ -40,7 +47,7 @@
 	iso_type,Isotherme
 	is_real,true
 	pressure_mode,relative
-	pressure_unit,bar
+	pressure_unit,None
 	loading_basis,molar
 	loading_unit,cm3(STP)
 	adsorbent_basis,mass
