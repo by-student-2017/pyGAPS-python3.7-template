@@ -125,8 +125,7 @@ h2, l2 = ax2.get_legend_handles_labels()
 ax1.legend(h1+h2, l1+l2, loc='center right')
 #
 plt.title("PSD plot NLDFT (carbon slit), DES")
-fig1 = plt.figure(1)
-fig1.savefig('./plot/NLDFT_deltaS_DES.jpg')
+fig.savefig('./plot/NLDFT_deltaS_DES.jpg')
 plt.show()
 
 # set name of columns
