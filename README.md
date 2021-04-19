@@ -12,6 +12,7 @@
 5. git clone https://github.com/by-student-2017/pyGAPS-python3.7-template.git
 6. cd ~/pyGAPS-python3.7-template
 7.  chmod +x run.sh
+8.  chmod +x run_sequential.sh
 
 
 ## Usage -1-
