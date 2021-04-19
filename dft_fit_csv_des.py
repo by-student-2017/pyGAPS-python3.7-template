@@ -94,14 +94,22 @@ x = ndfds[:,0]
 y = ndfds[:,3]
 y2 = ndfds[:,4]
 #
-fig = plt.figure()
+fig = plt.figure(figsize=(15,8))
 ax1 = fig.add_subplot(1, 1, 1)
 ax2 = ax1.twinx()
-ax1.plot(x, y, label="ds", color='black')
-ax1.set_xlabel("Pore size (nm)")
-ax1.set_ylabel('Incremental Surface Area $(m^{2}/g)$')
+#
+ax1.plot(x, y, label="Incremental Surface Area", color='black')
+ax1.set_ylabel('Incremental Surface Area $(m^{2}/g)$', fontsize=18, fontname='Helvetica')
+ax1.set_xlabel("Pore size (nm)", fontsize=16, fontname='Helvetica')
+ax1.axvline(x=1, ymin=0, ymax=1.0, color='gray', lw=1, ls='-', alpha=0.6)
+ax1.tick_params(labelsize=18)
 ax2.plot(x, y2, label="Cumulative Surface Area", color='red', linestyle="--")
-ax2.set_ylabel('Cumulative Surface Area $(m^{2}/g)$') 
+ax2.set_ylabel('Cumulative Surface Area $(m^{2}/g)$', fontsize=18, fontname='Helvetica') 
+ax2.tick_params(labelsize=18)
+#
+h1, l1 = ax1.get_legend_handles_labels()
+h2, l2 = ax2.get_legend_handles_labels()
+ax1.legend(h1+h2, l1+l2, loc='center right')
 #
 plt.grid()
 plt.title("PSD plot NLDFT (carbon slit), DES")
