@@ -39,10 +39,15 @@ import numpy as np
 ndfds = dfds.to_numpy()
 
 # calculate ds and Cumulative ds
-ultramicropore = 0.0
-supermicropore = 0.0
-micropore = 0.0
-macropore = 0.0
+ultramicropore_s = 0.0
+supermicropore_s = 0.0
+micropore_s = 0.0
+macropore_s = 0.0
+#
+ultramicropore_v = 0.0
+supermicropore_v = 0.0
+micropore_v = 0.0
+macropore_v = 0.0
 #
 ndfds[0,3] = (ndfds[0,2] - 0.0)/(ndfds[0,0]/2.0)*1000.0
 ndfds[0,4] = ndfds[0,3]
@@ -50,42 +55,46 @@ for num in range(1,len(ndfds)):
   ndfds[num,3] = (ndfds[num,2] - ndfds[num-1,2])/(ndfds[num,0]/2.0)*1000.0
   ndfds[num,4] = ndfds[num-1,4] + ndfds[num,3]
   if (ndfds[num,0] < 0.7):    # < 0.7 nm: ultra-micropore
-    ultramicropore = ultramicropore + ndfds[num,3]
+    ultramicropore_s = ultramicropore_s + ndfds[num,3]
+    ultramicropore_v = ndfds[num,2]
   elif (ndfds[num,0] < 2.0):  # 0.7 - 2 nm: super-micropore
-    supermicropore = supermicropore + ndfds[num,3]
+    supermicropore_s = supermicropore_s + ndfds[num,3]
+    supermicropore_v = ndfds[num,2] - ultramicropore_v
   elif (ndfds[num,0] < 50.0): # 2 - 50 nm: micropore
-    micropore = micropore + ndfds[num,3]
+    micropore_s = micropore_s + ndfds[num,3]
+    micropore_v = ndfds[num,2] - supermicropore_v - ultramicropore_v
   else:                       # > 50 nm: macropore
-    macropore = macropore + ndfds[num,3]
+    macropore_s = macropore_s + ndfds[num,3]
+    macropore_v = macropore_v + ndfds[num,2] - micropore_v - supermicropore_v - ultramicropore_v
 #
 print("***************************************************************************************************")
-print("specific surface area")
-print("ultra-micropore: %7.2f [m^2/g] (w < 0.7 nm)" % (ultramicropore))
-print("super-micropore: %7.2f [m^2/g] (0.7 =< w < 2.0 nm)" % (supermicropore))
-print("micropore: %7.2f [m^2/g], Attention!!! limited range (2-10 nm)" % (micropore))
-print("total ds: %7.2f [m^2/g], Attention!!! limited range (0.4 =< w =< 10 nm)" % (ndfds[len(ndfds)-1,4]))
+print("specific surface area and volume")
+print("ultra-micropore: %7.2f [m2/g], %7.2f [cm3/g] (w < 0.7 nm)" % (ultramicropore_s, ultramicropore_v))
+print("super-micropore: %7.2f [m2/g], %7.2f [cm3/g] (0.7 =< w < 2.0 nm)" % (supermicropore_s, supermicropore_v))
+print("micropore:       %7.2f [m2/g], %7.2f [cm3/g] Attention!!! limited range (2-10 nm)" % (micropore_s, micropore_v))
+print("total ds, V:     %7.2f [m2/g], %7.2f [cm3/g] Attention!!! limited range (0.4 =< w =< 10 nm)" % (ndfds[len(ndfds)-1,4], ndfds[len(ndfds)-1,2]))
 print("***************************************************************************************************")
 print("Note")
 print("The BET method underestimates the specific surface area of ultra-micropore region.")
 print("The BET method overestimates the specific surface area of super-micropore region by up to 50%.")
 print("Since the BET model assumes multi-layer adsorption, it holds only for pores larger than mesopores. In addition, the pore surface area tends to be overestimated because the interaction from the solid surface acting on the second and subsequent layers is ignored. ")
-print("total ds: %7.2f [m^2/g] (super-micropore*1.5)" % (ndfds[len(ndfds)-1,4]+supermicropore*0.5))
+print("total ds: %7.2f [m2/g] (super-micropore*1.5)" % (ndfds[len(ndfds)-1,4]+supermicropore_s*0.5))
 print("***************************************************************************************************")
 #
 text  = "***************************************************************************************************\n"
 text += "NLDFT (carbon slit model), DES) \n"
 text += "\n"
-text += "specific surface area \n"
-text += "ultra-micropore: "+"{:.2f}".format(ultramicropore)+" [m^2/g] (w < 0.7 nm) \n"
-text += "super-micropore: "+"{:.2f}".format(supermicropore)+" [m^2/g] (0.7 =< w < 2.0 nm) \n"
-text += "micropore: "+"{:.2f}".format(micropore)+" [m^2/g], Attention!!! limited range (2-10 nm) \n"
-text += "total ds: "+"{:.2f}".format(ndfds[len(ndfds)-1,4])+" [m^2/g], Attention!!! limited range (0.4 =< w =< 10 nm) \n"
+text += "specific surface area and volume\n"
+text += "ultra-micropore: "+"{:.2f}".format(ultramicropore_s)+" [m2/g], "+"{:.2f}".format(ultramicropore_v)+" [cm3/g] (w < 0.7 nm) \n"
+text += "super-micropore: "+"{:.2f}".format(supermicropore_s)+" [m2/g], "+"{:.2f}".format(supermicropore_v)+" [cm3/g] (0.7 =< w < 2.0 nm) \n"
+text += "micropore:       "+"{:.2f}".format(micropore_s)+" [m2/g], "+"{:.2f}".format(micropore_v)+" [cm3/g] Attention!!! limited range (2-10 nm) \n"
+text += "total ds, V:    "+"{:.2f}".format(ndfds[len(ndfds)-1,4])+" [m2/g], "+"{:.2f}".format(ndfds[len(ndfds)-1,2])+" [cm3/g] Attention!!! limited range (0.4 =< w =< 10 nm) \n"
 text += "************************************************\n"
 text += "Note \n"
 text += "The BET method underestimates the specific surface area of ultra-micropore region. \n"
 text += "The BET method overestimates the specific surface area of super-micropore region by up to 50%. \n"
 text += "Since the BET model assumes multi-layer adsorption, it holds only for pores larger than mesopores. In addition, the pore surface area tends to be overestimated because the interaction from the solid surface acting on the second and subsequent layers is ignored. \n"
-text += "total ds: "+"{:.2f}".format(ndfds[len(ndfds)-1,4]+supermicropore*0.5)+" [m^2/g] (super-micropore*1.5) \n"
+text += "total ds: "+"{:.2f}".format(ndfds[len(ndfds)-1,4]+supermicropore_s*0.5)+" [m2/g] (super-micropore*1.5) \n"
 text += "***************************************************************************************************\n"
 fileobj = open("./plot/info_des.txt",'w')
 fileobj.write(text)
@@ -124,7 +133,7 @@ h1, l1 = ax1.get_legend_handles_labels()
 h2, l2 = ax2.get_legend_handles_labels()
 ax1.legend(h1+h2, l1+l2, loc='center right')
 #
-plt.title("PSD plot NLDFT (carbon slit), DES")
+plt.title("PSD plot NLDFT (carbon slit), DES", fontsize=18, fontname='Arial')
 fig.savefig('./plot/NLDFT_deltaS_DES.jpg')
 plt.show()
 
