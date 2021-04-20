@@ -15,7 +15,7 @@
 8.  chmod +x run_sequential.sh
 
 
-## initial setting for des data
+## initial setting for desorption data
 1. cd ~/pyGAPS-python3.7-template
 2. python3 set_case.py
 3. mv case.csv case_original.csv

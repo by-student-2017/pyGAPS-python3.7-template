@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# initial setting for des data
+echo "==================================================================================================="
+echo "initial setting for desorption data"
 python3 set_case.py
 mv case.csv case_original.csv
 mv new_case.csv case.csv
