@@ -5,12 +5,12 @@ read_data_on = 0
 num_values = []
 last_data = []
 with open("case.csv") as f:
-  for row in csv.reader(f):
-    if row:
+  for row in csv.reader(f, delimiter='\t'):
+    if row and str(row[0]) != "":
       if read_data_on == 1:
         num_values.append(row)
         if float(num_values[len(num_values)-1][0]) > 0.1:
-          read_data_on = 0
+          read_data_on = 2
       if 'pressure' in row:
         read_data_on = 1
       nlines = ",".join(row)+"\n"
