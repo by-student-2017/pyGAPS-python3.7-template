@@ -67,4 +67,8 @@
 	adsorbent_unit,g
 
 
+## delta S plot from NLDFT (kernel: carbon slit)
+	dS [m2/g] = d(Cumulative V) [cm3/g] / (W [nm] / 2) * 1000
+
+
 Maybe, PSD-plot_pygaps_v303.py is for python 3.9.
