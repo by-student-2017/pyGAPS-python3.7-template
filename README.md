@@ -18,7 +18,11 @@
 ## initial setting for desorption data
 1. cd ~/pyGAPS-python3.7-template
 2. python3 set_case.py
+
+
 (2. python3 set_case_tab.py) (When the numeric data is separated by tab.)
+
+
 3. mv case.csv case_original.csv
 4. mv new_case.csv case.csv
 
