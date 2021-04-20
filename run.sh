@@ -2,7 +2,12 @@
 
 echo "==================================================================================================="
 echo "initial setting for desorption data"
-python3 set_case.py
+check_tab=`grep $'\t' case.csv`
+if [ check != ""]; then
+  python3 set_case_tab.py
+else
+  python3 set_case.py
+fi
 mv case.csv case_original.csv
 mv new_case.csv case.csv
 
