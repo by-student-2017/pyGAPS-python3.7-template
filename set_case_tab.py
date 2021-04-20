@@ -5,7 +5,8 @@ read_data_on = 0
 num_values = []
 last_data = []
 with open("case.csv") as f:
-  for row in csv.reader(f):
+  #for row in csv.reader(f):
+  for row in csv.reader(f, delimiter='\t'):
     if row and str(row[0]) != "":
       print(row)
       if read_data_on == 1:
