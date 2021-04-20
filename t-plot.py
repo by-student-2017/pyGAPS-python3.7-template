@@ -16,7 +16,7 @@ result_dict = pygaps.t_plot(isotherm, verbose=True)
 # plot
 fig1 = plt.figure(1)
 fig1.savefig('./plot/t-plot.jpg')
-plt.show()
+#plt.show()
 
 import pprint
 pprint.pprint(result_dict)

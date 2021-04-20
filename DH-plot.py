@@ -21,7 +21,7 @@ result_dict = pygaps.psd_mesoporous(
 # plot
 fig1 = plt.figure(1)
 fig1.savefig('./plot/DH-plot.jpg')
-plt.show()
+#plt.show()
 
 # import pprint
 # pprint.pprint(result_dict)

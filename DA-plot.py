@@ -15,7 +15,7 @@ result_dict = pygaps.da_plot(isotherm, limits=[0, 0.1], exp=None, verbose=True)
 # plot
 fig1 = plt.figure(1)
 fig1.savefig('./plot/DA-plot.jpg')
-plt.show()
+#plt.show()
 
 # import pprint
 # pprint.pprint(result_dict)

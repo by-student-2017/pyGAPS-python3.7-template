@@ -15,7 +15,7 @@ result_dict = pygaps.dr_plot(isotherm, verbose=True)
 # plot
 fig1 = plt.figure(1)
 fig1.savefig('./plot/DR-plot.jpg')
-plt.show()
+#plt.show()
 
 # import pprint
 # pprint.pprint(result_dict)

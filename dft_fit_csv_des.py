@@ -21,7 +21,7 @@ fig1 = plt.figure(1)
 fig1.savefig('./plot/NLDFT_DES_Fit.jpg')
 fig2 = plt.figure(2)
 fig2.savefig('./plot/NLDFT_DES.jpg')
-plt.show()
+#plt.show()
 
 # import pprint
 # pprint.pprint(result_dict_dft)
@@ -135,7 +135,7 @@ ax1.legend(h1+h2, l1+l2, loc='center right')
 #
 plt.title("PSD plot NLDFT (carbon slit), DES", fontsize=18, fontname='Arial')
 fig.savefig('./plot/NLDFT_deltaS_DES.jpg')
-plt.show()
+#plt.show()
 
 # set name of columns
 ndf = pd.DataFrame(ndfds)

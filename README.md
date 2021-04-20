@@ -15,6 +15,13 @@
 8.  chmod +x run_sequential.sh
 
 
+## initial setting for des data
+1. cd ~/pyGAPS-python3.7-template
+2. python3 set_case.py
+3. mv case.csv case_original.csv
+4. mv new_case.csv case.csv
+
+
 ## Usage -1-
 1. cd ~/pyGAPS-python3.7-template
 2. python3 dft_fit_csv_des.py

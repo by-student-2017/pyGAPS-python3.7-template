@@ -20,7 +20,7 @@ result_dict = pygaps.t_plot(isotherm, thickness_model=carbon_model, limits=(4.5,
 # plot
 fig1 = plt.figure(1)
 fig1.savefig('./plot/t-plot_Ref_CB_a2.jpg')
-plt.show()
+#plt.show()
 
 import pprint
 pprint.pprint(result_dict)

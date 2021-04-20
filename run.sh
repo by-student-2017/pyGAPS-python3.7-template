@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# initial setting for des data
+python3 set_case.py
+mv case.csv case_original.csv
+mv new_case.csv case.csv
+
 sed -i s/plt.show/#plt.show/g *.py
 #python3 analysis.py | tee ./plot/info.txt
 #
