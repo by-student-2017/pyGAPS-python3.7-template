@@ -3,7 +3,7 @@
 echo "==================================================================================================="
 echo "initial setting for desorption data"
 check_tab=`grep $'\t' case.csv`
-if [ check != ""]; then
+if [ check != "" ]; then
   python3 set_case_tab.py
 else
   python3 set_case.py
