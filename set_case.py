@@ -11,7 +11,7 @@ with open("case.csv") as f:
         read_data_on = 0
     if 'pressure' in row:
       read_data_on = 1
-    nlines = ", ".join(row)+"\n"
+    nlines = ",".join(row)+"\n"
     file.write(nlines)
 last_data = []
 last_data.append(row)
