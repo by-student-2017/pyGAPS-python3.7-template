@@ -41,12 +41,12 @@ ndfds = dfds.to_numpy()
 # calculate ds and Cumulative ds
 ultramicropore_s = 0.0
 supermicropore_s = 0.0
-micropore_s = 0.0
+mesopore_s = 0.0
 macropore_s = 0.0
 #
 ultramicropore_v = 0.0
 supermicropore_v = 0.0
-micropore_v = 0.0
+mesopore_v = 0.0
 macropore_v = 0.0
 #
 ndfds[0,3] = (ndfds[0,2] - 0.0)/(ndfds[0,0]/2.0)*1000.0
@@ -60,18 +60,18 @@ for num in range(1,len(ndfds)):
   elif (ndfds[num,0] < 2.0):  # 0.7 - 2 nm: super-micropore
     supermicropore_s = supermicropore_s + ndfds[num,3]
     supermicropore_v = ndfds[num,2] - ultramicropore_v
-  elif (ndfds[num,0] < 50.0): # 2 - 50 nm: micropore
-    micropore_s = micropore_s + ndfds[num,3]
-    micropore_v = ndfds[num,2] - supermicropore_v - ultramicropore_v
+  elif (ndfds[num,0] < 50.0): # 2 - 50 nm: mesopore
+    mesopore_s = mesopore_s + ndfds[num,3]
+    mesopore_v = ndfds[num,2] - supermicropore_v - ultramicropore_v
   else:                       # > 50 nm: macropore
     macropore_s = macropore_s + ndfds[num,3]
-    macropore_v = macropore_v + ndfds[num,2] - micropore_v - supermicropore_v - ultramicropore_v
+    macropore_v = macropore_v + ndfds[num,2] - mesopore_v - supermicropore_v - ultramicropore_v
 #
 print("***************************************************************************************************")
 print("specific surface area and volume")
 print("ultra-micropore: %7.2f [m2/g], %7.2f [cm3/g] (w < 0.7 nm)" % (ultramicropore_s, ultramicropore_v))
 print("super-micropore: %7.2f [m2/g], %7.2f [cm3/g] (0.7 =< w < 2.0 nm)" % (supermicropore_s, supermicropore_v))
-print("micropore:       %7.2f [m2/g], %7.2f [cm3/g] Attention!!! limited range (2-10 nm)" % (micropore_s, micropore_v))
+print("mesopore:       %7.2f [m2/g], %7.2f [cm3/g] Attention!!! limited range (2-10 nm)" % (mesopore_s, mesopore_v))
 print("total ds, V:     %7.2f [m2/g], %7.2f [cm3/g] Attention!!! limited range (0.4 =< w =< 10 nm)" % (ndfds[len(ndfds)-1,4], ndfds[len(ndfds)-1,2]))
 print("***************************************************************************************************")
 print("Note")
@@ -87,7 +87,7 @@ text += "\n"
 text += "specific surface area and volume\n"
 text += "ultra-micropore: "+"{:.2f}".format(ultramicropore_s)+" [m2/g], "+"{:.2f}".format(ultramicropore_v)+" [cm3/g] (w < 0.7 nm) \n"
 text += "super-micropore: "+"{:.2f}".format(supermicropore_s)+" [m2/g], "+"{:.2f}".format(supermicropore_v)+" [cm3/g] (0.7 =< w < 2.0 nm) \n"
-text += "micropore:       "+"{:.2f}".format(micropore_s)+" [m2/g], "+"{:.2f}".format(micropore_v)+" [cm3/g] Attention!!! limited range (2-10 nm) \n"
+text += "mesopore:       "+"{:.2f}".format(mesopore_s)+" [m2/g], "+"{:.2f}".format(mesopore_v)+" [cm3/g] Attention!!! limited range (2-10 nm) \n"
 text += "total ds, V:    "+"{:.2f}".format(ndfds[len(ndfds)-1,4])+" [m2/g], "+"{:.2f}".format(ndfds[len(ndfds)-1,2])+" [cm3/g] Attention!!! limited range (0.4 =< w =< 10 nm) \n"
 text += "************************************************\n"
 text += "Note \n"
