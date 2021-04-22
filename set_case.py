@@ -10,10 +10,10 @@ with open("case.csv") as f:
       if read_data_on == 1:
         num_values.append(row)
         if float(num_values[len(num_values)-1][0]) > 0.1:
-          read_data_on = 1
+          read_data_on = 2
       if ('pressure' in row) or ('pressure,loading' in row):
         read_data_on = 1
-      if (read_data_on == 1) and (float(row[0]) > 0.995) :
+      if (read_data_on == 2) and (float(row[0]) > 0.995) :
         pass
       else:
         nlines = ",".join(row)+"\n"
