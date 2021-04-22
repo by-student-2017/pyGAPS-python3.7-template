@@ -61,7 +61,7 @@ for num in range(1,len(ndfds)):
     supermicropore_s = supermicropore_s + ndfds[num,3]
     supermicropore_v = ndfds[num,2] - ultramicropore_v
   elif (ndfds[num,0] < 50.0): # 2 - 50 nm: mesopore
-    mesopore_s = micropore_s + ndfds[num,3]
+    mesopore_s = mesopore_s + ndfds[num,3]
     mesopore_v = ndfds[num,2] - supermicropore_v - ultramicropore_v
   else:                       # > 50 nm: macropore
     macropore_s = macropore_s + ndfds[num,3]
@@ -71,7 +71,7 @@ print("*************************************************************************
 print("specific surface area and volume")
 print("ultra-micropore: %7.2f [m2/g], %7.2f [cm3/g] (w < 0.7 nm)" % (ultramicropore_s, ultramicropore_v))
 print("super-micropore: %7.2f [m2/g], %7.2f [cm3/g] (0.7 =< w < 2.0 nm)" % (supermicropore_s, supermicropore_v))
-print("mesopore:       %7.2f [m2/g], %7.2f [cm3/g] Attention!!! limited range (2-10 nm)" % (mesopore_s, mesopore_v))
+print("mesopore:        %7.2f [m2/g], %7.2f [cm3/g] Attention!!! limited range (2-10 nm)" % (mesopore_s, mesopore_v))
 print("total ds, V:     %7.2f [m2/g], %7.2f [cm3/g] Attention!!! limited range (0.4 =< w =< 10 nm)" % (ndfds[len(ndfds)-1,4], ndfds[len(ndfds)-1,2]))
 print("***************************************************************************************************")
 print("Note")
