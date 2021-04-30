@@ -71,4 +71,8 @@
 	dS [m2/g] = d(Cumulative V) [cm3/g] / (W [nm] / 2) * 1000
 
 
+# NLDFT
+* For academic societies and treatises, 23 points or more are recommended for P/P0 =< 0.02, and 26 points or more for P/P0 > 0.02.
+
+
 Maybe, PSD-plot_pygaps_v303.py is for python 3.9.
