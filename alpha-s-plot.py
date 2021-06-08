@@ -33,7 +33,7 @@ model_ref = pygaps.isotherm_from_csv(path_model_ref)
 
 # alpha-s-plot
 # https://pygaps.readthedocs.io/en/master/examples/alphas.html
-result_dict = pygaps.alpha_s(isotherm, reference_isotherm=model_ref, limits=(2, 10), verbose=True)
+result_dict = pygaps.alpha_s(isotherm, reference_isotherm=model_ref, limits=(0.01, 2.0), verbose=True)
 #result_dict = pygaps.alpha_s(isotherm, reference_isotherm=model_ref, reference_area='BET', 
 #                             reducing_pressure=0.4, limits=(0.6, 0.8), verbose=True)
 
