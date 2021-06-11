@@ -1,6 +1,11 @@
 # Standard Reduced Nitrogen Adsorption Isotherm Data for LiChrospher Si-1000 Silica
-# The adsorbed amounts can be obtained by multiplying the Rs data by 9.12 cm3(STP)/g.
-# The statistical film thickness curve can be obtained by multiplying the Rs data by 0.722 nm.
+# The adsorbed amounts can be obtained by multiplying the alpha-s data by 9.12 cm3(STP)/g.
+# The statistical film thickness curve can be obtained by multiplying the alpha-s data by 0.722 nm.
+# SBET for Lichrospher Si-1000 assumed different values in different relative pressure intervals
+# (the latter are provided in parentheses): 26.2 [m2/g] (0.06-0.25), 25.1 [m2/g] (0.01-0.1), 21.4 [m2/g] (0.003-0.03), and 18.1 [m2/g] (0.001-0.01).
+# t = alpha-s * 0.722 [nm]
+# V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 1 * 9.12 [cm3(STP)/g], S(BET) = 26.2 [m2/g] (P/P0=0.06-0.25)
+# S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 26.2/9.12 = slope[cm3(STP)/g] * 2.872807
 # Data in parentheses were obtained using the nitrogen adsorption isotherm for LiChrospher Si-4000 silica.
 # P/P0, alpha-s
 5.55E-07, 0.012

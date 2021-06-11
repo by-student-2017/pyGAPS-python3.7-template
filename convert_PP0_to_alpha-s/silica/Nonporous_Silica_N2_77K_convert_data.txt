@@ -1,5 +1,8 @@
 # Standard alpha-s Data of N2 Gas for Nonporous Silica
 # M. Hakuman et al., Journal of Colloid and Interface Science 241, 127-141 (2001).: doi:10.1006/jcis.2001.7715
+# Vtest(alpha-s=1) is the adsorbed amount [cm3(STP)/g] at P/P0 = 0.4 for the test adsorbent.
+# From our data (SBET(std) = 6.20 m2/g, and Vstd(alpha-s=1) = 2.15 cm3(STP)/g)
+# S(alpha-s) [m2/g] = slope [cm3(STP)/g] * 6.20/2.15 = slope [cm3(STP)/g] * 2.88
 # P/P0, alpha-s
 0.01, 0.44
 0.02, 0.48
