@@ -1,7 +1,8 @@
 # Argon Standard Reduced Adsorption Data for Cabot BP 280 at 
-# 77 K (Amounts Adsorbed Were Divided by the Amount Adsorbed at 
-# a Relative Pressure of 0.4, i.e., 15.65 cm3(STP)/g)
-# Gardner et al., J. Phys. Chem. B, Vol. 105, No. 50, 2001.
+# 77 K (Amounts Adsorbed Were Divided by the Amount Adsorbed at a Relative Pressure of 0.4, i.e., 15.65 [cm3(STP)/g]
+# V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 15.65 [cm3(STP)/g], S(BET) = 36.6 [m2/g]
+# S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 36.6/15.65 = slope[cm3(STP)/g] * 2.338658
+# L. Gardner et al., J. Phys. Chem. B, Vol. 105, No. 50, 2001.
 # P/P0, alpha-s
 9.66E-06, 6.54E-03
 1.10E-05, 0.0131

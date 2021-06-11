@@ -1,6 +1,6 @@
 # Ar adsorption data for graphite (G25) sample at 77 K
 # K. Miura et al., Adsorption (2007) 13: 139-147.: DOI 10.1007/s10450-007-9015-7
-# Vm=3.16[cm3/g], C-value=352, S=11.70[m2/g]
+# Vm=V(theta=1)=3.16[cm3/g], C-value=352, S=11.70[m2/g]
 # relative_pressure_X, V[cm3(STP)/g], theta
 2.98E-04, 0.5361, 0.1697
 8.94E-04, 1.1452, 0.3624

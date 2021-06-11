@@ -1,7 +1,13 @@
 # Standard Isotherm Data for Nitrogen Adsorption at 77 K on Al-, Si-, Zr- and Fe-PILC1273K Materials
 # Jhonny Villarroel-Rocha et al./Adsorption Science & Technology Vol. 31 No. 2/3 2013
-# Al-PILC1273K: SBET = 2.42 m2/g, V0.4 = 0.72 cm3 STP/g; Si-PILC1273K: SBET = 2.19 m2/g, V0.4 = 0.65 cm3 STP/g
-# Zr-PILC1273K: SBET = 4.29 m2/g, V0.4 = 1.48 cm3 STP/g; Fe-PILC1273K: SBET = 5.69 m2/g, V0.4 = 2.04 cm3 STP/g
+# Al-PILC1273K: SBET = 2.42 [m2/g], V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 0.72 [cm3(STP)/g]
+#   S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 2.42/0.72 = slope[cm3(STP)/g] * 3.361111
+# Si-PILC1273K: SBET = 2.19 [m2/g], V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 0.65 [cm3(STP)/g]
+#   S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 2.19/0.65 = slope[cm3(STP)/g] * 3.369231
+# Zr-PILC1273K: SBET = 4.29 [m2/g], V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 1.48 [cm3(STP)/g]
+#   S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 4.29/1.48 = slope[cm3(STP)/g] * 2.898649
+# Fe-PILC1273K: SBET = 5.69 [m2/g], V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 2.04 [cm3(STP)/g]
+#   S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 5.69/2.04 = slope[cm3(STP)/g] * 2.789216
 # pillared clays (PILCs)
 # The reference materials were labelled according to their corresponding oligocation as Si-PILC1273K, Al-PILC1273K,Fe-PILC1273K and Zr-PILC1273K.
 # P/P0, alpha-s(Al-PILC1273K), alpha-s(Si-PILC1273K), alpha-s(Zr-PILC1273K), alpha-s(Fe-PILC1273K)

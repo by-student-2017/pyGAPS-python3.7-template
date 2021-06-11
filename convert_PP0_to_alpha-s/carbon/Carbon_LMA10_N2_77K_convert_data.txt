@@ -1,6 +1,8 @@
-# Standard data for the adsorption of N2 at 77.4 K on reference carbon LMA10.; A. Silvestre-Albero et al., Carbon 66 (2014) 699. (i.e., n/nm -where nm is the monolayer capacity from which the BET surface area is determined- against P/P0)
-# nm = 9.15e-5 mol/g, V04 = 3.26 cm3(STP)/g
-# S [m2/g] = slope [cm3(STP)/g] * 2.62
+# Standard data for the adsorption of N2 at 77.4 K on reference carbon LMA10.
+# A. Silvestre-Albero et al., Carbon 66 (2014) 699. 
+# (i.e., n/nm -where nm is the monolayer capacity from which the BET surface area is determined- against P/P0)
+# nm = 9.15e-5 mol/g, V(alpha-s=1) = V(P/P0=0.4) = V04 = 3.26 cm3(STP)/g, S(BET) = 8.517 m2/g
+# S [m2/g]= slope [cm3(STP)/g] * 8.517/3.26 = slope [cm3(STP)/g] * 2.61257
 # https://www.mdpi.com/2227-9717/8/11/1359/htm
 # P/P0, alpha-s, n/nm
 1.3033E-06, 0.00918461, 0.01462327

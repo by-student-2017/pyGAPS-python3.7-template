@@ -1,6 +1,6 @@
 # Ar adsorption data for graphite (OGB) sample at 77 K
 # K. Miura et al., Adsorption (2007) 13: 139-147.: DOI 10.1007/s10450-007-9015-7
-# Vm=1.06[cm3/g], C-value=443, S=3.91[m2/g]
+# Vm=V(theta=1)=1.06[cm3/g], C-value=443, S=3.91[m2/g]
 # relative_pressure_X, V[cm3(STP)/g], theta
 2.07E-03, 0.6526, 0.6157
 7.56E-03, 0.8584, 0.8098

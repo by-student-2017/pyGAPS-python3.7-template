@@ -1,5 +1,8 @@
-# Standard data for the adsorption of Ar at 87.3 K on reference carbon LMA10.; A. Silvestre-Albero et al., Carbon 66 (2014) 699. (i.e., n/nm -where nm is the monolayer capacity from which the BET surface area is determined- against P/P0)
+# Standard data for the adsorption of Ar at 87.3 K on reference carbon LMA10.
+# A. Silvestre-Albero et al., Carbon 66 (2014) 699. 
+# (i.e., n/nm -where nm is the monolayer capacity from which the BET surface area is determined- against P/P0)
 # nm = 7.37e-5 mol/g, V04 = 2.68 cm3(STP)/g
+# V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 2.68 [cm3(STP)/g]
 # P/P0, alpha-s, n/nm
 9.8238E-06, 0.00165929, 0.00269599
 2.0399E-05, 0.00712006, 0.01156855
