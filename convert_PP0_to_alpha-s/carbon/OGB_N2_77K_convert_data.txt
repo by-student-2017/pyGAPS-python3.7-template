@@ -1,4 +1,4 @@
-# N2 adsorption data for graphite (OGA) sample at 77 K
+# N2 adsorption data for graphite (OGB) sample at 77 K
 # K. Miura et al., Adsorption (2007) 13: 139-147.: DOI 10.1007/s10450-007-9015-7
 # Vm=0.90[cm3/g], C-value=2242, S=3.94[m2/g]
 # relative_pressure_X, V[cm3(STP)/g], theta
