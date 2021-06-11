@@ -2,7 +2,7 @@
 # The adsorbed amounts can be obtained by multiplying the Rs data by 9.12 cm3(STP)/g.
 # The statistical film thickness curve can be obtained by multiplying the Rs data by 0.722 nm.
 # Data in parentheses were obtained using the nitrogen adsorption isotherm for LiChrospher Si-4000 silica.
-# P/P0, alpha-s, n/nm
+# P/P0, alpha-s
 5.55E-07, 0.012
 1.23E-06, 0.023
 2.38E-06, 0.034
