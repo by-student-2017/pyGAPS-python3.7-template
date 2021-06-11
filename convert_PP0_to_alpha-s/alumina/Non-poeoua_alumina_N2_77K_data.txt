@@ -1,5 +1,9 @@
 # Standard data for the adsorption of nitrogen at 77 K on non-porous alumina
 # J. Cejka et al., Phys. Chem. Chem. Phys., 2001, 3, 5076-5081.; DOI: 10.1039/b105603b
+# The Aluminiumoxid C (denoted as DC, SBET=128.0[m2/g]) was obtained from Degussa. 
+# The a-alumina (denoted as AA) was prepared by high temperature treatment (1200 C, 10 h) of 
+# tablets prepared from pseudoboehmite (Pural SB from Condea Chemie, FRG); 
+# this material has surface area SBET=6.77[m2/g].
 # P/P0, Aluminiumoxid C (micro mol/m2), alpha-Alumina (micro mol/m2)
 0.001, 4.642, 2.550
 0.005, 6.264, 4.146

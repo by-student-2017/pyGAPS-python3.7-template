@@ -1,5 +1,11 @@
-# Adsorption of N2 (77.4 K) in cm3/g STP on hydrated alpha-Al2O3 degassed at various temperatures
 # M. S. Mel'gunov et al., Adsorption (2019) 25:601-611.: https://doi.org/10.1007/s10450-019-00055-z
+#
+# BET surface areas (m2/g) for degassed at various temperatures
+# T(deg): 100, 200, 300, 400, 500, 600, 700, 800, 900
+# alpha-s(BET):4.7, 4.8, 4.8, 4.8, 5.1, 5.2, 5.1, 5.1, 5.1
+# p/ps range: 0.14-0.30, 0.12-0.28, 0.10-0.28, 0.08-0.26, 0.07-0.26, 0.07-0.26, 0.06-0.26, 0.05-0.29, 0.05-0.29
+#
+# Adsorption of N2 (77.4 K) in cm3/g STP on hydrated alpha-Al2O3 degassed at various temperatures
 # ln(p/(Ps-P)), Degas temperature (deg) 100, 200, 300, 400, 500, 600, 700, 800, 900, epsilon=sigma_x/(average(x)*sqet(n)) (%)
 -12.0, 0.0942, 0.1230, 0.1523, 0.1867, 0.2360, 0.2740, 0.3271, 0.3534, 0.3791, 1.18
 -11.5, 0.1129, 0.1465, 0.1787, 0.2138, 0.2631, 0.3013, 0.3522, 0.3790, 0.4111, 1.05

@@ -3,6 +3,8 @@
 # Standard reduced adsorption obtained using the amount adsorbed, 1.2815 cm3(STP)/g at p/p0 of 0.4006;
 # the specific surface area of a-Al2O3-R = 3.56 m2/g and the monolayer capacity = 0.8172 cm3(STP)/g 
 # obtained by the BET equation in the relative pressure range of 0.05-0.20
+# V(alpha-s=1) = V(P/P0=0.4) = V04 = 1.2815 [cm3(STP)/g], S(BET) = 3.56 [m2/g]
+# S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 3.56/1.2815 = slope[cm3(STP)/g] * 2.777995
 # P/P0, alpha-s
 1.80E-06, 0.0108
 4.12E-06, 0.0211
