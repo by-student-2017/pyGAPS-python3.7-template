@@ -1,5 +1,5 @@
 # carbon black, N2, 77K, K. Kaneko, TANSO 186 (1999) 50.
-# S(alpha-s) [m2/g] = slope [mg/g] * 2.14 = slope [cm3(STP)/g] * (28.0134/22.4) * 2.14
+# S(alpha-s) [m2/g] = slope [mg/g] * 2.14 = slope [cm3(STP)/g] * (28.0134/22.414) * 2.14
 # P/P0, alpha-s
 0.000, 0.0000
 1.3125e-6, 0.015439
