@@ -1,0 +1,28 @@
+
+CB = Carbon Black (NGCB = Non-Graphitized Carbon Black)
+GCB = Graphitized Carbon Black
+
+Q. Should I use CB (NGCB) or GCB ? 
+A. Local crystallinity in the pores may be improved in samples treated with activated carbon at a high temperature of 1000 degrees or higher, so it is necessary to consider using GCB instead of CB. 
+
+Q. What are the characteristics of "Black Pearl (BP) 280" ? 
+A. see https://www.fetc.com.tw/upload/files/BP_280.pdf
+  other ref.: Datasheet-BLACK-PEARLS-280pdf.pdf
+  ----------------------------------------------------
+  PROPERTY: TYPICAL VALUES; TEST METHOD
+  Iodine number (mg/g): 43 ;ASTM D-1510
+  OAN (cc/100g): 121 ;ASTM D-2414
+  Tint (%): 60 ;ASTM D-3265
+  325 Mesh residue (PPM): <200 ;ASTM D-1514
+  Density @ 23 ‹C (kg/m3): 365 ;ASTM D-1513
+  The data in the table above are typical test values intended as guidance only; they are not product specifications. Product specifications are available upon request from your Cabot  representative.
+  ----------------------------------------------------
+
+Q. What are the characteristics of "Carbopack F" ? 
+A. see http://carbon.org.ua/sorbent-selection-guide
+  HydrophobU: GCB-A
+  https://gcms.cz/labrulez-bucket-strapi-h3hsga3/application::paper.paper/t406044.pdf
+  Relative Analyte Size: >C20
+  Analyte size relative to n-Alkanes. Consider all atoms, not just Carbon. For example, even  though 1,2-Dichloroethane is a C2, the two Chlorine atoms give it a relative size between  C4 and C5.
+  related ref.: https://www.jstage.jst.go.jp/article/jec1991/15/2/15_2_247/_pdf 
+  https://www2.st.tokushima-u.ac.jp/News/st_Innovators-Tomorrow/Introd_J/CHEM/dataJ/horikawa_j.pdf
