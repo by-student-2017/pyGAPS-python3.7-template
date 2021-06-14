@@ -8,6 +8,7 @@
 # adsorption potential of two-dimensional fluid-solid phase transition (kJ/mol): 3.12
 # V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 2.658 [cm3(STP)/g], S(BET) = 6.2 [m2/g]
 # S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 6.2/2.658 = slope[cm3(STP)/g] * 2.332581
+# Graphitized_Carbon_Blacks
 # P/P0, alpha-s
 4.13E-06, 0.0041
 9.01E-06, 0.0083
