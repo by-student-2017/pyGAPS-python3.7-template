@@ -2,6 +2,12 @@
 CB = Carbon Black (NGCB = Non-Graphitized Carbon Black)
 GCB = Graphitized Carbon Black
 
+Q. How to convert from P/P0 to alpha-s plot ?
+A. Linear approximation is performed between two points near the actual P/P0.
+
+Q. How to calculate "slope" in alpha-s plot ?
+A. The "slope" in the alpha-s plot is obtained by connecting the origin and the valley between the two "swings" with a straight line. As an aside, in a carbon system using N2 gas, alpha-s = 0.5 corresponds to single-layer adsorption.
+
 Q. Should I use CB (NGCB) or GCB ? 
 A. Local crystallinity in the pores may be improved in samples treated with activated carbon at a high temperature of 1000 degrees or higher, so it is necessary to consider using GCB instead of CB. 
 
