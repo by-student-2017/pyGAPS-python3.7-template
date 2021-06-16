@@ -7,7 +7,7 @@ def idx_of_the_nearest(data, value):
     idx = np.argmin(np.abs(np.array(data) - value))
     return idx
 
-dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/Non-Graphitized_carbon_black_sample_NGCB_N2_77K_convert_data.txt", header = 0)
+dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/Carbopack_F_N2_77K_convert_data.txt", header = 0)
 #print(dfs.iloc[:,0])
 #print(dfs.iloc[:,1])
 
@@ -22,8 +22,8 @@ for header1 in dfs.iloc[:,0]:
     as_standard.append(float(dfs.iloc[x,1]))
   x = x + 1
 
-#print(pp0_standard)
-#print(as_standard)
+print(pp0_standard)
+print(as_standard)
 #pp0_standard = dfs.iloc[:,0]
 #as_standard = dfs.iloc[:,1]
 #as_max = max(dfs.iloc[:,1])
@@ -72,13 +72,13 @@ index = idx_of_the_nearest(as_obserbed, 0.5)
 #print(df.iloc[index,1])
 x = np.linspace(0, max(as_obserbed), 100)
 #y = df.iloc[index,1]*2 * x
-#s = df.iloc[index,1]*2 * 2.715517
+#s = df.iloc[index,1]*2 * 2.332581
 #print(cm3STP_obserbed[index])
 #y = cm3STP_obserbed[index]*2 * x
-#s = cm3STP_obserbed[index]*2 * 2.715517
+#s = cm3STP_obserbed[index]*2 * 2.332581
 slope = ((cm3STP_obserbed[index+1]-cm3STP_obserbed[index])/(as_obserbed[index+1]-as_obserbed[index])*(0.5-as_obserbed[index])+cm3STP_obserbed[index])*2
 y = slope * x
-s = slope * 2.715517
+s = slope * 2.332581
 x_max = max(x)
 
 plt.plot(as_obserbed, cm3STP_obserbed, c="red", label="obserbed (ads)")

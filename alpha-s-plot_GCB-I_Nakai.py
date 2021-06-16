@@ -29,7 +29,7 @@ for header1 in dfs.iloc[:,0]:
 #as_max = max(dfs.iloc[:,1])
 pp0min = min(pp0_standard)
 pp0max = max(pp0_standard)
-as_max = max(as_standard)
+#as_max = max(as_standard)
 #plt.scatter(pp0_standard, as_standard, label="standard")
 #plt.show()
 
@@ -79,13 +79,14 @@ x = np.linspace(0, max(as_obserbed), 100)
 slope = ((cm3STP_obserbed[index+1]-cm3STP_obserbed[index])/(as_obserbed[index+1]-as_obserbed[index])*(0.5-as_obserbed[index])+cm3STP_obserbed[index])*2
 y = slope * x
 s = slope * 2.715517
+x_max = max(x)
 
 plt.plot(as_obserbed, cm3STP_obserbed, c="red", label="obserbed (ads)")
 plt.plot(x, y, c="blue", label="fitted: "+'{:.1f}'.format(s)+" [$m^{{2}}/g$]", linestyle="dashed")
 plt.axvline(x=0.5, c="gray", label="monolayer", linestyle="dashed")
 plt.xlabel('alpha-s')
 plt.ylabel('$cm^{{3}}STP/g$')
-plt.xlim(0, as_max)
+plt.xlim(0, x_max)
 plt.ylim(0, cm3STP_max)
 plt.legend()
 plt.title('alpha-s plot')

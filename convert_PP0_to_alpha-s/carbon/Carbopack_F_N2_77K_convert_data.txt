@@ -1,6 +1,5 @@
-# Nitrogen Standard Reduced Adsorption Data for Carbopack F Graphitized Carbon Black 
-# (the Adsorbed Amounts Were Divided by the Adsorbed Amount at a Relative Pressure of 0.4, i.e., 2.658 cm3(STP)/g)
-# M. Kruk et al., Langmuir 1999, 15, 1435-1441.
+# Carbopack F Graphitized Carbon Black, N2, 77.4 K
+# M. Kruk et al., Langmuir 15 (1999)1435-1441.
 # BET specific surface area (m2/g): 6.2
 # total pore volume (cm3/g): 0.02
 # % graphite crystallinity: 95
