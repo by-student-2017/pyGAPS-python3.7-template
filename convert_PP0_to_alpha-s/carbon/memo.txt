@@ -32,3 +32,7 @@ A. see http://carbon.org.ua/sorbent-selection-guide
   Analyte size relative to n-Alkanes. Consider all atoms, not just Carbon. For example, even  though 1,2-Dichloroethane is a C2, the two Chlorine atoms give it a relative size between  C4 and C5.
   related ref.: https://www.jstage.jst.go.jp/article/jec1991/15/2/15_2_247/_pdf 
   https://www2.st.tokushima-u.ac.jp/News/st_Innovators-Tomorrow/Introd_J/CHEM/dataJ/horikawa_j.pdf
+  
+more info.
+[1] http://adsorption.org/awm/ads/alfa-s.htm
+[2] https://osf.io/zjg8a/
