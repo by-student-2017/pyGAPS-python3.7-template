@@ -43,7 +43,7 @@ flag = 0
 x= 0
 for header1 in df.iloc[:,0]:
   if flag == 1:
-    if float(df.iloc[x,0]) >= pp0max:
+    if float(df.iloc[x,0]) >= pp0max or (float(df.iloc[x+1,0]) - float(df.iloc[x,0])) < 0.0:
       flag = 2
     elif float(df.iloc[x,0]) <= pp0min:
       pass
