@@ -22,8 +22,8 @@ for header1 in dfs.iloc[:,0]:
     as_standard.append(float(dfs.iloc[x,1]))
   x = x + 1
 
-print(pp0_standard)
-print(as_standard)
+#print(pp0_standard)
+#print(as_standard)
 #pp0_standard = dfs.iloc[:,0]
 #as_standard = dfs.iloc[:,1]
 #as_max = max(dfs.iloc[:,1])
