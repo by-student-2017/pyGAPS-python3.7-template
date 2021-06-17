@@ -1,6 +1,6 @@
 # Graphitized carbon black (GCB-I), N2, 77.4 K
 # K. Nakai et al., DOI:10.1016/j.jcis.2010.08.005
-# V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 22.7 cm3(STP)/g, V(theta=1)=12.5 cm3(STP)/g, S(BET) = 54.2 m2/g
+# V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 22.7 [cm3(STP)/g], V(theta=1)=12.5 [cm3(STP)/g], S(BET) = 54.2 [m2/g]
 # S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 54.2/22.7 = slope[cm3(STP)/g] * 2.387665
 # n/(molecules/nm2) = 0.602 * Gamma/(micro mol/m2)
 # P/P0, alpha-s, Gamma(micro mol/m2)
