@@ -1,4 +1,4 @@
-# Non-Graphitized carbon black (NGCB), N2, 87.3 K
+# Non-Graphitized carbon black (NGCB), N2, 87.3 K, data
 # K. Nakai et al., DOI:10.1016/j.jcis.2011.10.061
 # V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 6.72 [cm3(STP)/g], V(theta=1)=4.21 [cm3(STP)/g], S(BET) = 18.9 [m2/g]
 # S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 18.9/6.72 = slope[cm3(STP)/g] * 2.8125
@@ -61,7 +61,7 @@
 0.10, 0.649, 10.3, 6.22
 0.15, 0.707, 11.2, 6.76
 0.20, 0.760, 12.1, 7.28
-0.25. 0.817, 13.0, 7.82
+0.25, 0.817, 13.0, 7.82
 0.30, 0.875, 13.9, 8.37
 0.35, 0.936, 14.9, 8.96
 0.40, 1.000, 15.9, 9.57
