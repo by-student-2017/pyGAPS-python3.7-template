@@ -92,4 +92,5 @@ plt.legend()
 plt.title('alpha-s plot')
 plt.show()
 
+print("The current version only works with [P/P0 vs. cm3(STP)/g] data (case.csv)")
 print("Surface area (of alpha-s plot): "+'{:.1f}'.format(s)+" [m2/g]")
