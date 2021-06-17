@@ -1,11 +1,8 @@
-# Argon Standard Reduced Adsorption Data for
-# Carbopack F Graphitized Carbon Black at 77 K (Amounts
-# Adsorbed Were Divided by the Amount Adsorbed at a
-# Relative Pressure of 0.4, i.e., 3.173 [cm3(STP)/g]
+# Carbopack F Graphitized Carbon Black, Ar, 77 K 
+# L. Gardner et al., J. Phys. Chem. B 105 (2001).
 # V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 3.173 [cm3(STP)/g], S(BET) = 5.88 [m2/g]
 # S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 5.88/3.173 = slope[cm3(STP)/g] * 1.853136
 # graphitized carbon black (Carbopack F) 
-# L. Gardner et al., J. Phys. Chem. B, Vol. 105, No. 50, 2001.
 # P/P0, alpha-s
 5.85E-05, 6.08E-03
 1.16E-04, 0.0122
