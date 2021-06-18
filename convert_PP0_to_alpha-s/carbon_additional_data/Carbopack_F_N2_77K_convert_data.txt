@@ -1,4 +1,4 @@
-# Carbopack F Graphitized Carbon Black, N2, 77.4 K
+# Carbopack F Graphitized Carbon Black, N2, 77.4 K, data, t
 # M. Kruk et al., Langmuir 15 (1999) 1435-1441.
 # BET specific surface area (m2/g): 6.2
 # total pore volume (cm3/g): 0.02
