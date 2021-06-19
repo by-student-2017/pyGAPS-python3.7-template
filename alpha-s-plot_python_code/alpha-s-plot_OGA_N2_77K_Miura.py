@@ -67,7 +67,7 @@ x_max = max(x)
 
 plt.plot(as_obserbed, cm3STP_obserbed, c="red", label="obserbed (ads)")
 plt.plot(x, y, c="blue", label="fitted: "+'{:.1f}'.format(s)+" [$m^{{2}}/g$]", linestyle="dashed")
-plt.axvline(x=0.5, c="gray", label="monolayer", linestyle="dashed")
+plt.axvline(x=0.5, c="gray", label="monolayer of carbon slit", linestyle="dashed")
 plt.xlabel('alpha-s')
 plt.ylabel('$cm^{{3}}STP/g$')
 plt.xlim(0, x_max)
