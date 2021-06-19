@@ -1,4 +1,4 @@
-# nongraphitized carbon black (BP 280), Ar, 77 K
+# nongraphitized carbon black (BP 280), Ar, 77 K, data, t
 # V(alpha-s=1) = V(P/P0=0.4) = V0.4 = 15.65 [cm3(STP)/g], S(BET) = 36.6 [m2/g]
 # S(alpha-s)[m2/g] = slope[cm3(STP)/g] * 36.6/15.65 = slope[cm3(STP)/g] * 2.338658
 # [pyGAPS] BET surface area: a = 37 m2/g, The BET constant is: C = 229, Amount for a monolayer: n = 0.00044 mol/g

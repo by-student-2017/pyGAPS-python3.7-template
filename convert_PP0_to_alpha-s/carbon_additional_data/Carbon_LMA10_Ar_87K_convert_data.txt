@@ -1,4 +1,4 @@
-# LMA10, Ar, 87.3 K
+# LMA10, Ar, 87.3 K, data, t
 # Standard data for the adsorption of Ar at 87.3 K on reference carbon LMA10.
 # A. Silvestre-Albero et al., Carbon 66 (2014) 699. 
 # (i.e., n/nm -where nm is the monolayer capacity from which the BET surface area is determined- against P/P0)
