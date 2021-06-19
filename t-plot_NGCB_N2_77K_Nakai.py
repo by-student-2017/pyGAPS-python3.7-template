@@ -5,14 +5,14 @@ import numpy as np
 
 
 # ********** Setting the magnification of t-plot and MP data **********
-vtimes = 100.0
-stimes =  50.0
-as_coeff = 2.332581
-as_to_t_coeff = 0.599642483/1.0
+vtimes = 50.0
+stimes = 25.0
+as_coeff = 2.715517
+as_to_t_coeff = 0.578483697/1.0
 gas_limit = 0.354
 tx_step = 0.005
-read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/Carbopack_F_N2_77K_convert_data.txt"
-num_of_t_line = 3
+read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/Non-Graphitized_carbon_black_sample_NGCB_N2_77K_convert_data.txt"
+num_of_t_line = 4
 # ***************************************
 
 
