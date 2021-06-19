@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from scipy import interpolate
 import numpy as np
 
+as_coeff = 2.332581
+
 def idx_of_the_nearest(data, value):
     idx = np.argmin(np.abs(np.array(data) - value))
     return idx
@@ -22,16 +24,8 @@ for header1 in dfs.iloc[:,0]:
     as_standard.append(float(dfs.iloc[x,1]))
   x = x + 1
 
-#print(pp0_standard)
-#print(as_standard)
-#pp0_standard = dfs.iloc[:,0]
-#as_standard = dfs.iloc[:,1]
-#as_max = max(dfs.iloc[:,1])
 pp0min = min(pp0_standard)
 pp0max = max(pp0_standard)
-#as_max = max(as_standard)
-#plt.scatter(pp0_standard, as_standard, label="standard")
-#plt.show()
 
 df = pd.read_csv("case.csv", header = 0)
 #print(df.iloc[:,0])
@@ -54,14 +48,7 @@ for header1 in df.iloc[:,0]:
     flag = 1
   x = x + 1
 
-#print(pp0_obserbed)
-#print(cm3STP_obserbed)
-#pp0_obserbed = df.iloc[:,0]
-#cm3STP_obserbed = df.iloc[:,1]
-#cm3STP_max = max(df.iloc[:,1])*1.1
 cm3STP_max = max(cm3STP_obserbed)*1.1
-#plt.scatter(pp0_obserbed, cm3STP_obserbed, label="obserbed (ads)")
-#plt.show()
 
 method = interpolate.interp1d
 fitted_curve = method(pp0_standard, as_standard)
@@ -71,14 +58,9 @@ index = idx_of_the_nearest(as_obserbed, 0.5)
 #print(index)
 #print(df.iloc[index,1])
 x = np.linspace(0, max(as_obserbed), 100)
-#y = df.iloc[index,1]*2 * x
-#s = df.iloc[index,1]*2 * 2.332581
-#print(cm3STP_obserbed[index])
-#y = cm3STP_obserbed[index]*2 * x
-#s = cm3STP_obserbed[index]*2 * 2.332581
 slope = ((cm3STP_obserbed[index+1]-cm3STP_obserbed[index])/(as_obserbed[index+1]-as_obserbed[index])*(0.5-as_obserbed[index])+cm3STP_obserbed[index])*2
 y = slope * x
-s = slope * 2.332581
+s = slope * as_coeff
 x_max = max(x)
 
 plt.plot(as_obserbed, cm3STP_obserbed, c="red", label="obserbed (ads)")
@@ -92,5 +74,14 @@ plt.legend()
 plt.title('alpha-s plot')
 plt.show()
 
+plt.title("alpha-s-plot, ads", fontsize=18, fontname='Arial')
+fig.savefig('./plot/alpha-s-plot.jpg')
+
+print("***************************************************************************")
 print("The current version only works with [P/P0 vs. cm3(STP)/g] data (case.csv)")
 print("Surface area (of alpha-s plot): "+'{:.1f}'.format(s)+" [m2/g]")
+print("***************************************************************************")
+
+dft = pd.DataFrame([as_obserbed, cm3STP_obserbed])
+dft.index = ['as', 'pore_volume[cm3(STP)/g]']
+dft.T.to_csv("./plot/alpha-s-plot_results.csv")
