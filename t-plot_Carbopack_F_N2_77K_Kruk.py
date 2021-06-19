@@ -4,8 +4,14 @@ from scipy import interpolate
 import numpy as np
 
 
-# ********** Setting the magnification of MP data **********
-times = 100.0
+# ********** Setting the magnification of t-plot and MP data **********
+vtimes = 100.0
+stimes =  50.0
+as_coeff = 2.332581
+as_to_t_coeff = 0.599642483/1.0
+gas_limit = 0.354
+tx_step = 0.005
+read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/Carbopack_F_N2_77K_convert_data.txt"
 # ***************************************
 
 
@@ -17,7 +23,7 @@ def idx_of_the_nearest(data, value):
 
 
 # ********** get standard data **********
-dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon_additional_data/Carbopack_F_N2_77K_convert_data.txt", header = 0)
+dfs = pd.read_csv(read_csv_file_name, header = 0)
 #print(dfs.iloc[:,0])
 #print(dfs.iloc[:,1])
 
@@ -92,24 +98,23 @@ t_obserbed = fitted_curve(pp0_obserbed)
 
 
 # ********** calculate slope from raw data ********** 
-index = idx_of_the_nearest(t_obserbed, 0.354)
+as_index = idx_of_the_nearest(t_obserbed, 0.5*as_to_t_coeff)
+as_slope = (cm3STP_obserbed[as_index+1]-cm3STP_obserbed[as_index])/(t_obserbed[as_index+1]-t_obserbed[as_index])*(0.5*as_to_t_coeff-t_obserbed[as_index])+cm3STP_obserbed[as_index]
+sas = cm3STP_obserbed[as_index]*2.0 * as_coeff
+
+index = idx_of_the_nearest(t_obserbed, gas_limit)
 #print(index)
 #print(df.iloc[index,1])
 fx = np.linspace(0, max(t_obserbed), 100)
-#y = df.iloc[index,1]*2 * fx
-#s = df.iloc[index,1]*2 * 2.332581 * 0.599642483/1.0
-#print(cm3STP_obserbed[index])
-#y = cm3STP_obserbed[index]*2 * fx
-#s = cm3STP_obserbed[index]*2 * 2.332581 * 0.599642483/1.0
-slope = ((cm3STP_obserbed[index+1]-cm3STP_obserbed[index])/(t_obserbed[index+1]-t_obserbed[index])*(0.354-t_obserbed[index])+cm3STP_obserbed[index])/0.354
+slope = ((cm3STP_obserbed[index+1]-cm3STP_obserbed[index])/(t_obserbed[index+1]-t_obserbed[index])*(gas_limit-t_obserbed[index])+cm3STP_obserbed[index])/gas_limit
 fy = slope * fx
-fs = slope * 2.332581 * 0.599642483/1.0
+fs = slope * as_coeff * as_to_t_coeff
 fx_max = max(fx)
 # ***************************************
 
 
 # ********** cut raw data ********** 
-t_index = idx_of_the_nearest(t_obserbed, 0.3)
+t_index = idx_of_the_nearest(t_obserbed, gas_limit*0.9)
 low_cut_t_obserbed = []
 low_cut_cm3STP_obserbed = []
 flag = 0
@@ -130,7 +135,7 @@ for header1 in cm3STP_obserbed:
 #i_method = lambda x, y: interpolate.interp1d(x, y, kind="cubic")
 i_method = interpolate.Akima1DInterpolator
 t_fitted_curve = i_method(low_cut_t_obserbed, low_cut_cm3STP_obserbed)
-tx = np.arange(min(t_obserbed)+0.151, max(t_obserbed)-0.01, 0.005)
+tx = np.arange(min(t_obserbed)+0.01, max(t_obserbed)-0.01, tx_step)
 t_fitted_data = t_fitted_curve(tx)
 # ***************************************
 
@@ -139,9 +144,9 @@ t_fitted_data = t_fitted_curve(tx)
 d_t_fitted_data = []
 dtx = []
 for dx in range(1,len(t_fitted_data)):
-    sur = (t_fitted_data[dx]-t_fitted_data[dx-1])/0.01*2.332581*0.599642483/1.0
+    sur = (t_fitted_data[dx]-t_fitted_data[dx-1])/(tx[dx]-tx[dx-1])*as_coeff*as_to_t_coeff
     d_t_fitted_data.append(sur)
-    dtx.append(tx[dx-1])
+    dtx.append(tx[dx-1]+tx_step/2.0)
 # ***************************************
 
 
@@ -150,15 +155,15 @@ b_t_fitted_data = []
 btx = []
 dt_old = 0.0
 for bx in range(1,len(t_fitted_data)):
-  if tx[bx] >= 0.354:
+  if tx[bx] >= gas_limit:
     dt = (t_fitted_data[bx]-t_fitted_data[bx-1])/(tx[bx]-tx[bx-1])
     #print (t_fitted_data[bx]-dt*tx[bx])
     dvol = (t_fitted_data[bx]-dt*tx[bx]) - (t_fitted_data[bx-1]-dt_old*tx[bx-1])
     #print (vol)
     if dvol <= 0.0:
       dvol = 0.0
-    b_t_fitted_data.append(dvol*times)
-    btx.append(tx[bx])
+    b_t_fitted_data.append(dvol*vtimes)
+    btx.append(tx[bx-1]+tx_step/2.0)
     dt_old = dt
 # ***************************************
 
@@ -167,10 +172,10 @@ for bx in range(1,len(t_fitted_data)):
 dd_t_fitted_data = []
 ddtx = []
 for ddx in range(1,len(d_t_fitted_data)):
-  if tx[ddx] >= 0.354:
+  if tx[ddx] >= gas_limit:
     dsur = d_t_fitted_data[ddx-1]-d_t_fitted_data[ddx]
-    dd_t_fitted_data.append(dsur*times)
-    ddtx.append(tx[ddx])
+    dd_t_fitted_data.append(dsur*stimes)
+    ddtx.append(tx[ddx-1]+tx_step/2.0)
 # ***************************************
 
 
@@ -184,15 +189,15 @@ ax2 = ax1.twinx()
 ax1.plot(t_obserbed, cm3STP_obserbed, c="red", label="obserbed (ads)")
 ax1.plot(fx, fy, c="blue", label="fitted: "+'{:.1f}'.format(fs)+" [$m^{{2}}/g$]", linestyle="dashed")
 ax1.plot(tx, t_fitted_data, c="green", label="fitted_curve (ads)", linestyle="dashed")
-ax1.plot(btx, b_t_fitted_data, c="black", label="MP method x "+str(times)+"\n (dV [$cm^{{3}}STP/g$])", linestyle="dashed")
+ax1.plot(btx, b_t_fitted_data, c="black", label="MP method x "+str(vtimes)+"\n (dV [$cm^{{3}}STP/g$])", linestyle="dashed")
 ax1.axvline(x=0.354, c="gray", label="limit", linestyle="dashed")
-ax2.plot(ddtx, dd_t_fitted_data, c="orange", label="MP method x "+str(times)+"\n (dS [$m^{{2}}/g$])", linestyle="dashed")
+ax2.plot(ddtx, dd_t_fitted_data, c="orange", label="MP method x "+str(stimes)+"\n (dS [$m^{{2}}/g$])", linestyle="dashed")
 
 plt.title("t-plot and MP method")
 plt.xlim(0, fx_max)
-plt.xlabel('t [nm]')
+ax1.set_xlabel('Layer thickness, t [nm]')
 ax1.set_ylim(0, cm3STP_max)
-ax1.set_ylabel('V or dV [$cm^{{3}}STP/g$]')
+ax1.set_ylabel('Pore volume or dV [$cm^{{3}}STP/g$]')
 ax2.set_ylim(0, cm3STP_max)
 ax2.set_ylabel('dS [$m^{{2}}/g$]')
 h1, l1 = ax1.get_legend_handles_labels()
@@ -203,5 +208,30 @@ plt.show()
 
 
 # ********** show result **********
-print("Surface area (of t-plot): "+'{:.1f}'.format(s)+" [m2/g]")
+print("***************************************************************************")
+print("The current version only works with [P/P0 vs. cm3(STP)/g] data (case.csv)")
+print("Surface area (t-plot): "+'{:.1f}'.format(fs)+" [m2/g]")
+print("Surface area (alpha-s-plot): "+'{:.1f}'.format(sas)+" [m2/g]")
+print("***************************************************************************")
+# ***************************************
+
+
+# ********** output graph (jpg) **********
+plt.title("t-plot, ads", fontsize=18, fontname='Arial')
+fig.savefig('./plot/t-plot.jpg')
+# ***************************************
+
+
+# ********** output window and excel file **********
+dft = pd.DataFrame([t_obserbed, cm3STP_obserbed])
+dft.index = ['t[nm]', 'pore_volume[cm3(STP)/g]']
+dft.T.to_csv("./plot/t-plot_results.csv")
+
+dfmpv = pd.DataFrame([btx,b_t_fitted_data])
+dfmpv.index = ['t[nm]', 'dV[cm3(STP)/g]']
+dfmpv.T.to_csv("./plot/MP_dV_results.csv")
+
+dfmps = pd.DataFrame([ddtx,dd_t_fitted_data])
+dfmps.index = ['t[nm]', 'dS[m2/g]']
+dfmps.T.to_csv("./plot/MP_dS_results.csv")
 # ***************************************
