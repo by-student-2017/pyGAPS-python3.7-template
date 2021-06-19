@@ -1,16 +1,5 @@
 #!/bin/bash
 
-echo "==================================================================================================="
-echo "initial setting for desorption data"
-check_tab=`grep $'\t' case.csv`
-if [ "${check_tab}" != "" ]; then
-  python3 set_case_tab.py
-else
-  python3 set_case.py
-fi
-mv case.csv case_original.csv
-mv new_case.csv case.csv
-
 sed -i s/plt.show/#plt.show/g *.py
 #python3 analysis.py | tee ./plot/info.txt
 #
@@ -44,12 +33,14 @@ python3 Langmuir-plot.py
 echo "==================================================================================================="
 echo "t plot Ref_CarbonBlack"
 echo " "
-python3 t-plot_Ref_CarbonBlack.py
+#python3 t-plot_Ref_CarbonBlack.py
+python3 t-plot_NGCB_N2_77K_Nakai.py
 #
 echo "==================================================================================================="
 echo "alpha-s plot"
 echo " "
-python3 alpha-s-plot.py
+#python3 alpha-s-plot.py
+python3 alpha-s-plot_NGCB_N2_77K_Nakai.py
 #
 #echo "==================================================================================================="
 #echo "DH plot"
