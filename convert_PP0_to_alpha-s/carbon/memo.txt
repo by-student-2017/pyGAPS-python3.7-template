@@ -6,7 +6,9 @@ Q. How to convert from P/P0 to alpha-s plot ?
 A. Linear approximation is performed between two points (convert_data.txt) near the actual P/P0.
 
 Q. How to calculate "slope" in alpha-s plot ?
-A. The "slope" in the alpha-s plot is obtained by connecting the origin and the valley between the two "swings" with a straight line. As an aside, in a carbon system using N2 gas, alpha-s = 0.5 corresponds to single-layer adsorption.
+A. The "slope" in the alpha-s plot is obtained by connecting the origin and the valley between the two "swings" with a straight line. As an aside, in a carbon (slit) system using N2 gas, alpha-s = 0.5 corresponds to single-layer adsorption.
+Q. What does the straight line connecting the origin and the value at alpha-s = 0.5 mean ? 
+A. This straight line removes the adsorption promoting effect caused by the pores and represents the contribution of the adsorption process similar to that of a flat surface. 
 
 Q. Should I use CB (NGCB) or GCB ? 
 A. Local crystallinity in the pores may be improved in samples treated with activated carbon at a high temperature of 1000 degrees or higher, so it is necessary to consider using GCB instead of CB. 
@@ -20,7 +22,8 @@ A. see https://www.fetc.com.tw/upload/files/BP_280.pdf
   OAN (cc/100g): 121 ;ASTM D-2414
   Tint (%): 60 ;ASTM D-3265
   325 Mesh residue (PPM): <200 ;ASTM D-1514
-  Density @ 23 ‹C (kg/m3): 365 ;ASTM D-1513
+  Moisture as packed (%); <1.0 ;ASTM D-1509
+  Density (kg/m3): 365 ;ASTM D-1513
   The data in the table above are typical test values intended as guidance only; they are not product specifications. Product specifications are available upon request from your Cabot  representative.
   ----------------------------------------------------
 
