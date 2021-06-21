@@ -161,7 +161,8 @@ for bx in range(1,len(t_fitted_data)):
   if tx[bx] >= gas_limit:
     dt = (t_fitted_data[bx]-t_fitted_data[bx-1])/(tx[bx]-tx[bx-1])
     #print (t_fitted_data[bx]-dt*tx[bx])
-    dvol = (t_fitted_data[bx]-dt*tx[bx]) - (t_fitted_data[bx-1]-dt_old*tx[bx-1])
+    #dvol = (t_fitted_data[bx]-dt*tx[bx]) - (t_fitted_data[bx-1]-dt_old*tx[bx-1])
+    dvol = (dt_old - dt)*(tx[bx-1]+tx[bx])/2.0 * as_coeff*as_to_t_coeff/ttimes
     #print (vol)
     if dvol <= 0.0:
       dvol = 0.0
