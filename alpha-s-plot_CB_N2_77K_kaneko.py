@@ -3,6 +3,16 @@ import matplotlib.pyplot as plt
 from scipy import interpolate
 import numpy as np
 
+# If the fitting is bad, change the following range (parameters). 
+# meso fitting range
+meso_start = 0.837
+meso_end = 1.2
+
+# If the fitting is bad, change the following range (parameters). 
+# extarnal fitting range
+ext_start = 1.5
+ext_end = 1.7
+
 as_coeff = (28.0134/22.4) * 2.14
 
 def idx_of_the_nearest(data, value):
@@ -63,9 +73,30 @@ y = slope * x
 s = slope * as_coeff
 x_max = max(x)
 
+# meso: about (0.3 =< P/P0 =< 0.9), about (0.837 =< alpha-s =< 2.13)
+index_meso1 = idx_of_the_nearest(as_obserbed, meso_start)
+index_meso2 = idx_of_the_nearest(as_obserbed, meso_end)
+meso_x = np.linspace(0, max(as_obserbed), 100)
+meso_slope = (cm3STP_obserbed[index_meso2]-cm3STP_obserbed[index_meso1])/(as_obserbed[index_meso2]-as_obserbed[index_meso1])
+meso_y = meso_slope * (x-as_obserbed[index_meso1]) + cm3STP_obserbed[index_meso1]
+meso_s = meso_slope * as_coeff
+micro_meso_v = meso_slope * (0.0-as_obserbed[index_meso1]) + cm3STP_obserbed[index_meso1]
+
+# alpha-s = 1.0 for pore size = 2.5 nm
+index_ext1 = idx_of_the_nearest(as_obserbed, ext_start)
+index_ext2 = idx_of_the_nearest(as_obserbed, ext_end)
+ext_x = np.linspace(0, max(as_obserbed), 100)
+ext_slope = (cm3STP_obserbed[index_ext2]-cm3STP_obserbed[index_ext1])/(as_obserbed[index_ext2]-as_obserbed[index_ext1])
+ext_y = ext_slope * (x-as_obserbed[index_ext1]) + cm3STP_obserbed[index_ext1]
+ext_s = ext_slope * as_coeff
+Total_v = ext_slope * (0.0-as_obserbed[index_ext1]) + cm3STP_obserbed[index_ext1]
+
+fig = plt.figure()
 plt.plot(as_obserbed, cm3STP_obserbed, c="red", label="obserbed (ads)")
-plt.plot(x, y, c="blue", label="fitted: "+'{:.1f}'.format(s)+" [$m^{{2}}/g$]", linestyle="dashed")
-plt.axvline(x=0.5, c="gray", label="monolayer", linestyle="dashed")
+plt.plot(x, y, c="blue", label="Total S: "+'{:.1f}'.format(s)+" [$m^{{2}}/g$]\n Micro S:"+'{:.1f}'.format(s-meso_s)+" [$m^{{2}}/g$]", linestyle="dashed")
+plt.plot(meso_x, meso_y, c="brown", label="Meso S: "+'{:.1f}'.format(meso_s-ext_s)+" [$m^{{2}}/g$]\n Micro+Meso V:"+'{:.1f}'.format(micro_meso_v)+" [$cm^{{3}}(STP)/g$]\n (need to check line and range)", linestyle="dashed")
+plt.plot(ext_x, ext_y, c="green", label="External S: "+'{:.1f}'.format(ext_s)+" [$m^{{2}}/g$]\n Total V:"+'{:.1f}'.format(Total_v)+" [$cm^{{3}}(STP)/g$]", linestyle="dashed")
+plt.axvline(x=0.5, c="gray", label="monolayer of ideal carbon slit", linestyle="dashed")
 plt.xlabel('alpha-s')
 plt.ylabel('$cm^{{3}}STP/g$')
 plt.xlim(0, x_max)
@@ -80,6 +111,8 @@ fig.savefig('./plot/alpha-s-plot.jpg')
 print("***************************************************************************")
 print("The current version only works with [P/P0 vs. cm3(STP)/g] data (case.csv)")
 print("Surface area (of alpha-s plot): "+'{:.1f}'.format(s)+" [m2/g]")
+print("Pore volume (of alpha-s plot): "+'{:.1f}'.format(Total_v)+" [cm3(STP)/g]")
+print("External Pore volume (of alpha-s plot): "+'{:.1f}'.format(Total_v - micro_meso_v)+" [cm3(STP)/g]")
 print("***************************************************************************")
 
 dft = pd.DataFrame([as_obserbed, cm3STP_obserbed])

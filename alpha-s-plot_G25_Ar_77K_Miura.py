@@ -13,15 +13,17 @@ meso_end = 1.2
 ext_start = 1.5
 ext_end = 1.7
 
-as_coeff = 2.338658
+as_coeff = 2.088189
 
 def idx_of_the_nearest(data, value):
     idx = np.argmin(np.abs(np.array(data) - value))
     return idx
 
-dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/Cabot_BP280_Ar_77K_convert_data.txt", header = 0)
+dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/G25_Ar_77K_reference_data.txt", header = 0)
+#dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/OGA_Ar_77K_reference_data.txt", header = 0)
+#dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/OGB_Ar_77K_reference_data.txt", header = 0)
 #print(dfs.iloc[:,0])
-#print(dfs.iloc[:,1])
+#print(dfs.iloc[:,3])
 
 pp0_standard = []
 as_standard = []
@@ -29,11 +31,9 @@ x= 0
 for header1 in dfs.iloc[:,0]:
   if dfs.iloc[x,0][0] == "#":
     pass
-  elif float(dfs.iloc[x,0]) >= 0.990:
-    pass
   else:
     pp0_standard.append(float(dfs.iloc[x,0]))
-    as_standard.append(float(dfs.iloc[x,1]))
+    as_standard.append(float(dfs.iloc[x,3]))
   x = x + 1
 
 pp0min = min(pp0_standard)

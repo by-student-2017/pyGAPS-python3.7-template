@@ -13,15 +13,17 @@ meso_end = 1.2
 ext_start = 1.5
 ext_end = 1.7
 
-as_coeff = 2.338658
+as_coeff = 1.908326
 
 def idx_of_the_nearest(data, value):
     idx = np.argmin(np.abs(np.array(data) - value))
     return idx
 
-dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/Cabot_BP280_Ar_77K_convert_data.txt", header = 0)
+#dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/G25_N2_77K_reference_data.txt", header = 0)
+dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/OGA_N2_77K_reference_data.txt", header = 0)
+#dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/OGB_N2_77K_reference_data.txt", header = 0)
 #print(dfs.iloc[:,0])
-#print(dfs.iloc[:,1])
+#print(dfs.iloc[:,3])
 
 pp0_standard = []
 as_standard = []
@@ -29,11 +31,9 @@ x= 0
 for header1 in dfs.iloc[:,0]:
   if dfs.iloc[x,0][0] == "#":
     pass
-  elif float(dfs.iloc[x,0]) >= 0.990:
-    pass
   else:
     pp0_standard.append(float(dfs.iloc[x,0]))
-    as_standard.append(float(dfs.iloc[x,1]))
+    as_standard.append(float(dfs.iloc[x,3]))
   x = x + 1
 
 pp0min = min(pp0_standard)
@@ -72,7 +72,7 @@ index = idx_of_the_nearest(as_obserbed, 0.5)
 x = np.linspace(0, max(as_obserbed), 100)
 slope = ((cm3STP_obserbed[index+1]-cm3STP_obserbed[index])/(as_obserbed[index+1]-as_obserbed[index])*(0.5-as_obserbed[index])+cm3STP_obserbed[index])*2
 y = slope * x
-s = slope * as_coeff
+s = slope * 2.272668
 x_max = max(x)
 
 # meso: about (0.3 =< P/P0 =< 0.9), about (0.837 =< alpha-s =< 2.13)
