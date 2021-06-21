@@ -5,12 +5,14 @@ import numpy as np
 
 
 # ********** Setting the magnification of t-plot and MP data **********
-vtimes = 100.0
-stimes =  50.0
+ttimes = 2.0    # 1.0 = t, 2.0 = 2t
+vtimes = 100.0  # for dV
+stimes =  50.0  # for dS
+tx_step = 0.005 # step size
+#
 as_coeff = 2.238806
-as_to_t_coeff = 0.439009648/0.99997436
-gas_limit = 0.336
-tx_step = 0.005
+as_to_t_coeff = 0.439009648/0.99997436*ttimes
+gas_limit = 0.336*ttimes
 read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/Carbon_LMA10_N2_77K_convert_data.txt"
 num_of_t_line = 4
 # ***************************************
@@ -36,7 +38,7 @@ for header1 in dfs.iloc[:,0]:
     pass
   else:
     pp0_standard.append(float(dfs.iloc[tx,0]))
-    t_standard.append(float(dfs.iloc[tx,num_of_t_line]))
+    t_standard.append(float(dfs.iloc[tx,num_of_t_line])*ttimes)
   tx = tx + 1
 # ***************************************
 
@@ -191,12 +193,18 @@ ax1.plot(t_obserbed, cm3STP_obserbed, c="red", label="obserbed (ads)")
 ax1.plot(fx, fy, c="blue", label="fitted: "+'{:.1f}'.format(fs)+" [$m^{{2}}/g$]", linestyle="dashed")
 ax1.plot(tx, t_fitted_data, c="green", label="fitted_curve (ads)", linestyle="dashed")
 ax1.plot(btx, b_t_fitted_data, c="black", label="MP method x "+str(vtimes)+"\n (dV [$cm^{{3}}STP/g$])", linestyle="dashed")
-ax1.axvline(x=0.354, c="gray", label="limit", linestyle="dashed")
+ax1.axvline(x=gas_limit, c="gray", label="limit: "+'{:.3f}'.format(gas_limit)+" [nm]", linestyle="dashed")
 ax2.plot(ddtx, dd_t_fitted_data, c="orange", label="MP method x "+str(stimes)+"\n (dS [$m^{{2}}/g$])", linestyle="dashed")
 
 plt.title("t-plot and MP method")
 plt.xlim(0, fx_max)
-ax1.set_xlabel('Layer thickness, t [nm]')
+if ttimes == 2.0:
+  ax1.set_xlabel('Layer thickness, 2t [nm] (Pore width)')
+elif ttimes == 1.0:
+  ax1.set_xlabel('Layer thickness, t [nm]')
+else:
+  ax1.set_xlabel('Error. please, set ttimes = 1.0 or ttimes = 2.0')
+ax1.minorticks_on()
 ax1.set_ylim(0, cm3STP_max)
 ax1.set_ylabel('Pore volume or dV [$cm^{{3}}STP/g$]')
 ax2.set_ylim(0, cm3STP_max)
