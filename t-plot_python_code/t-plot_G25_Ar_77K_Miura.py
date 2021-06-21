@@ -10,7 +10,7 @@ vtimes = 100.0  # for dV
 stimes =  50.0  # for dS
 tx_step = 0.005 # step size
 #
-as_coeff = 2.088189
+as_coeff = 2.088189*ttimes
 as_to_t_coeff = 0.6038256/1.013557168*ttimes
 gas_limit = 0.336*ttimes
 read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/G25_Ar_77K_reference_data.txt"

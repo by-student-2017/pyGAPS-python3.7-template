@@ -10,7 +10,7 @@ vtimes = 100.0  # for dV
 stimes =  50.0  # for dV
 tx_step = 0.005 # for dV
 #
-as_coeff = 1.933719
+as_coeff = 1.933719*ttimes
 as_to_t_coeff = 6.66E-01/1.0*ttimes
 gas_limit = 0.354*ttimes
 read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/Carbopack_F_Ar_87K_convert_data.txt"

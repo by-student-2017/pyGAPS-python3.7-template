@@ -10,7 +10,7 @@ vtimes = 50.0   # for dV
 stimes = 25.0   # for dS
 tx_step = 0.005 # step size
 #
-as_coeff = 2.387665
+as_coeff = 2.387665*ttimes
 as_to_t_coeff = 0.642864/1.0*ttimes
 gas_limit = 0.354*ttimes
 read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/Graphitized_carbon_black_sample_GCB-I_N2_77K_convert_data.txt"
