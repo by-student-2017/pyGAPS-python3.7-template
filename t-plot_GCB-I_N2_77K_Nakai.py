@@ -6,8 +6,8 @@ import numpy as np
 
 # ********** Setting the magnification of t-plot and MP data **********
 ttimes = 2.0    # 1.0 = t, 2.0 = 2t
-vtimes = 50.0   # for dV
-stimes = 25.0   # for dS
+vtimes = 1.0   # for dV
+stimes = 1.0   # for dS
 tx_step = 0.005 # step size
 ltimes = 0.7    # interpolation, dV and dS range
 #
