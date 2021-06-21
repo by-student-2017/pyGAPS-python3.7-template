@@ -6,9 +6,10 @@ import numpy as np
 
 # ********** Setting the magnification of t-plot and MP data **********
 ttimes = 2.0    # 1.0 = t, 2.0 = 2t
-vtimes = 50.0   # for dV
-stimes = 25.0   # for dS
+vtimes = 1.0   # for dV
+stimes = 1.0   # for dS
 tx_step = 0.005 # step size
+ltimes = 0.7    # interpolation, dV and dS range
 #
 as_coeff = 2.715517
 as_to_t_coeff = 0.578483697/1.0*ttimes
@@ -117,7 +118,7 @@ fx_max = max(fx)
 
 
 # ********** cut raw data ********** 
-t_index = idx_of_the_nearest(t_obserbed, gas_limit*0.9)
+t_index = idx_of_the_nearest(t_obserbed, gas_limit*ltimes)
 low_cut_t_obserbed = []
 low_cut_cm3STP_obserbed = []
 flag = 0
@@ -158,7 +159,7 @@ b_t_fitted_data = []
 btx = []
 dt_old = 0.0
 for bx in range(1,len(t_fitted_data)):
-  if tx[bx] >= gas_limit:
+  if tx[bx] >= gas_limit*ltimes:
     dt = (t_fitted_data[bx]-t_fitted_data[bx-1])/(tx[bx]-tx[bx-1])
     #print (t_fitted_data[bx]-dt*tx[bx])
     #dvol = (t_fitted_data[bx]-dt*tx[bx]) - (t_fitted_data[bx-1]-dt_old*tx[bx-1])
@@ -176,7 +177,7 @@ for bx in range(1,len(t_fitted_data)):
 dd_t_fitted_data = []
 ddtx = []
 for ddx in range(1,len(d_t_fitted_data)):
-  if tx[ddx] >= gas_limit:
+  if tx[ddx] >= gas_limit*ltimes:
     dsur = d_t_fitted_data[ddx-1]-d_t_fitted_data[ddx]
     dd_t_fitted_data.append(dsur*stimes)
     ddtx.append(tx[ddx-1]+tx_step/2.0)
