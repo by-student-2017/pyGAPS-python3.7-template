@@ -35,12 +35,14 @@ echo "t plot Ref_CarbonBlack"
 echo " "
 #python3 t-plot_Ref_CarbonBlack.py
 python3 t-plot_NGCB_N2_77K_Nakai.py
+python3 t-plot_GCB-I_N2_77K_Nakai.py
 #
 echo "==================================================================================================="
 echo "alpha-s plot"
 echo " "
 #python3 alpha-s-plot.py
 python3 alpha-s-plot_NGCB_N2_77K_Nakai.py
+python3 alpha-s-plot_GCB-I_N2_77K_Nakai.py
 #
 #echo "==================================================================================================="
 #echo "DH plot"
