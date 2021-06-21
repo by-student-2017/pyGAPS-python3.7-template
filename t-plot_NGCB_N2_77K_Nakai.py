@@ -8,6 +8,7 @@ import numpy as np
 ttimes = 2.0    # 1.0 = t, 2.0 = 2t
 vtimes = 1.0    # for dV
 stimes = 1.0    # for dS
+
 tx_step = 0.005 # step size
 ltimes = 0.7    # cut, interpolation, dV and dS range
 #
