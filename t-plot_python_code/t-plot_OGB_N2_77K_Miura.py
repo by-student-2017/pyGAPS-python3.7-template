@@ -10,7 +10,7 @@ vtimes = 100.0  # for dV
 stimes =  50.0  # for dS
 tx_step = 0.005 # step size
 #
-as_coeff = 2.286688*ttimes
+as_coeff = 2.286688
 as_to_t_coeff = 0.6865122/1.012991174*ttimes
 gas_limit = 0.354*ttimes
 read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/OGB_N2_77K_reference_data.txt"
@@ -147,7 +147,7 @@ t_fitted_data = t_fitted_curve(tx)
 d_t_fitted_data = []
 dtx = []
 for dx in range(1,len(t_fitted_data)):
-    sur = (t_fitted_data[dx]-t_fitted_data[dx-1])/(tx[dx]-tx[dx-1])*as_coeff*as_to_t_coeff
+    sur = (t_fitted_data[dx]-t_fitted_data[dx-1])/(tx[dx]-tx[dx-1])*as_coeff*as_to_t_coeff*ttimes
     d_t_fitted_data.append(sur)
     dtx.append(tx[dx-1]+tx_step/2.0)
 # ***************************************
@@ -162,7 +162,7 @@ for bx in range(1,len(t_fitted_data)):
     dt = (t_fitted_data[bx]-t_fitted_data[bx-1])/(tx[bx]-tx[bx-1])
     #print (t_fitted_data[bx]-dt*tx[bx])
     #dvol = (t_fitted_data[bx]-dt*tx[bx]) - (t_fitted_data[bx-1]-dt_old*tx[bx-1])
-    dvol = (dt_old - dt)*(tx[bx-1]+tx[bx])/2.0 * as_coeff*as_to_t_coeff/ttimes
+    dvol = (dt_old - dt)*(tx[bx-1]+tx[bx])/2.0 * as_coeff*as_to_t_coeff
     #print (vol)
     if dvol <= 0.0:
       dvol = 0.0
