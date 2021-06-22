@@ -10,10 +10,10 @@ meso_end = 1.2
 
 # If the fitting is bad, change the following range (parameters). 
 # extarnal fitting range
-ext_start = 1.5
-ext_end = 1.7
+ext_start = 2.0
+ext_end = 3.0
 
-as_coeff = 2.286688
+as_coeff = 3.94/1.723016 # 2.286688
 
 def idx_of_the_nearest(data, value):
     idx = np.argmin(np.abs(np.array(data) - value))
