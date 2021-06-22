@@ -11,7 +11,7 @@ stimes = 1.0    # for dS
 tx_step = 0.005 # step size
 ltimes = 0.7    # cut, interpolation, dV and dS range
 #
-as_coeff = 2.338658
+as_coeff = 36.6/15.65 # = 2.338658
 as_to_t_coeff = 0.533130054/1.0*ttimes
 gas_limit = 0.336*ttimes
 read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/Cabot_BP280_Ar_77K_convert_data.txt"

@@ -11,7 +11,7 @@ stimes = 1.0    # for dS
 tx_step = 0.005 # step size
 ltimes = 0.7    # cut, interpolation, dV and dS range
 #
-as_coeff = 1.908326
+as_coeff = 5.27/2.761582 # = 1.908326
 as_to_t_coeff = 0.6550656/1.002468875*ttimes
 gas_limit = 0.336*ttimes
 read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/OGA_Ar_77K_reference_data.txt"

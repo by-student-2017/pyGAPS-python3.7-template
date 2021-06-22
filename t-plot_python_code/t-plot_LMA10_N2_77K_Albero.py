@@ -11,7 +11,7 @@ stimes = 1.0    # for dS
 tx_step = 0.005 # step size
 ltimes = 0.7    # cut, interpolation, dV and dS range
 #
-as_coeff = 2.61257
+as_coeff = 8.517/3.26 # = 2.61257
 as_to_t_coeff = 0.702300546/1.00539659*ttimes
 gas_limit = 0.354*ttimes
 read_csv_file_name = "./convert_PP0_to_alpha-s/carbon_additional_data/Carbon_LMA10_N2_77K_convert_data.txt"
