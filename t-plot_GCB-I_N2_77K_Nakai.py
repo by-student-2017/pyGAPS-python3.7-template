@@ -229,20 +229,20 @@ print("*************************************************************************
 
 # ********** output graph (jpg) **********
 plt.title("t-plot, ads", fontsize=18, fontname='Arial')
-fig.savefig('./plot/t-plot.jpg')
+fig.savefig('./plot/t-plot_GCB.jpg')
 # ***************************************
 
 
 # ********** output window and excel file **********
 dft = pd.DataFrame([t_obserbed, cm3STP_obserbed])
 dft.index = ['t[nm]', 'pore_volume[cm3(STP)/g]']
-dft.T.to_csv("./plot/t-plot_results.csv")
+dft.T.to_csv("./plot/t-plot_GCB_std_results.csv")
 
 dfmpv = pd.DataFrame([btx,b_t_fitted_data])
 dfmpv.index = ['t[nm]', 'dV[cm3(STP)/g]']
-dfmpv.T.to_csv("./plot/MP_dV_results.csv")
+dfmpv.T.to_csv("./plot/MP_dV_GCB_std_results.csv")
 
 dfmps = pd.DataFrame([ddtx,dd_t_fitted_data])
 dfmps.index = ['t[nm]', 'dS[m2/g]']
-dfmps.T.to_csv("./plot/MP_dS_results.csv")
+dfmps.T.to_csv("./plot/MP_dS_GCB_std_results.csv")
 # ***************************************
