@@ -19,8 +19,8 @@ def idx_of_the_nearest(data, value):
     idx = np.argmin(np.abs(np.array(data) - value))
     return idx
 
-#dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/Carbopack_F_N2_77K_convert_data.txt", header = 0)
-dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/Carbopack_F_Ar_87K_convert_data.txt", header = 0)
+dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/Carbopack_F_N2_77K_convert_data.txt", header = 0)
+#dfs = pd.read_csv("./convert_PP0_to_alpha-s/carbon/Carbopack_F_Ar_87K_convert_data.txt", header = 0)
 #print(dfs.iloc[:,0])
 #print(dfs.iloc[:,1])
 
