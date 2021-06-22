@@ -199,7 +199,8 @@ ax1.axvline(x=gas_limit, c="gray", label="limit: "+'{:.3f}'.format(gas_limit)+" 
 ax2.plot(ddtx, dd_t_fitted_data, c="orange", label="MP method x "+str(stimes)+"\n (dS [$m^{{2}}/g$])", linestyle="dashed")
 
 plt.title("t-plot and MP method")
-plt.xlim(0, fx_max)
+#plt.xlim(0, fx_max)
+plt.xlim(0, 2.0)
 if ttimes == 2.0:
   ax1.set_xlabel('Layer thickness, 2t [nm] (Pore width)')
 elif ttimes == 1.0:
