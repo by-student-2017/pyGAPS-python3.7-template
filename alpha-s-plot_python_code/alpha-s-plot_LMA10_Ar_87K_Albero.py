@@ -13,7 +13,7 @@ meso_end = 1.2
 ext_start = 1.5
 ext_end = 1.7
 
-as_coeff = 2.238806
+as_coeff = 6.00/2.68 # 2.238806
 
 def idx_of_the_nearest(data, value):
     idx = np.argmin(np.abs(np.array(data) - value))
