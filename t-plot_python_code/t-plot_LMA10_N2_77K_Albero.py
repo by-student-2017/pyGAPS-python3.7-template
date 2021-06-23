@@ -9,7 +9,7 @@ ttimes = 2.0    # 1.0 = t, 2.0 = 2t
 vtimes = 1.0    # for dV
 stimes = 1.0    # for dS
 tx_step = 0.005 # step size
-ltimes = 0.7    # cut, interpolation, dV and dS range
+ltimes = 0.0    # cut, interpolation, dV and dS range
 #
 as_coeff = 8.517/3.26 # = 2.61257
 as_to_t_coeff = 0.702300546/1.00539659*ttimes
