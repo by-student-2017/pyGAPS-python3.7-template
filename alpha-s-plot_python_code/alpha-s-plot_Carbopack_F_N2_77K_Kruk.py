@@ -106,8 +106,8 @@ plt.legend()
 plt.title('alpha-s plot')
 plt.show()
 
-plt.title("alpha-s-plot, ads", fontsize=18, fontname='Arial')
-fig.savefig('./plot/alpha-s-plot.jpg')
+plt.title("alpha-s-plot (Carbopack F (GCB std), N2 77K, Kruk), ads", fontsize=18, fontname='Arial')
+fig.savefig('./plot/alpha-s-plot_Carbopack_F_N2_77K_Kruk.jpg')
 
 print("***************************************************************************")
 print("The current version only works with [P/P0 vs. cm3(STP)/g] data (case.csv)")
@@ -118,4 +118,4 @@ print("*************************************************************************
 
 dft = pd.DataFrame([as_obserbed, cm3STP_obserbed])
 dft.index = ['as', 'pore_volume[cm3(STP)/g]']
-dft.T.to_csv("./plot/alpha-s-plot_results.csv")
+dft.T.to_csv("./plot/alpha-s-plot_Carbopack_F_N2_77K_Kruk.csv")

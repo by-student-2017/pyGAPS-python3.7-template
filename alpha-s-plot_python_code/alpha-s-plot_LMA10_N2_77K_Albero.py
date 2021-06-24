@@ -105,8 +105,8 @@ plt.legend()
 plt.title('alpha-s plot')
 plt.show()
 
-plt.title("alpha-s-plot, ads", fontsize=18, fontname='Arial')
-fig.savefig('./plot/alpha-s-plot.jpg')
+plt.title("alpha-s-plot (LMA10 std., N2 77K, Albero), ads", fontsize=18, fontname='Arial')
+fig.savefig('./plot/alpha-s-plot_LMA10_N2_77K_Albero.jpg')
 
 print("***************************************************************************")
 print("The current version only works with [P/P0 vs. cm3(STP)/g] data (case.csv)")
@@ -117,4 +117,4 @@ print("*************************************************************************
 
 dft = pd.DataFrame([as_obserbed, cm3STP_obserbed])
 dft.index = ['as', 'pore_volume[cm3(STP)/g]']
-dft.T.to_csv("./plot/alpha-s-plot_results.csv")
+dft.T.to_csv("./plot/alpha-s-plot_LMA10_N2_77K_Albero.csv")
