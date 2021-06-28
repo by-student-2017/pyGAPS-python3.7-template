@@ -40,9 +40,26 @@ A. see http://carbon.org.ua/sorbent-selection-guide
 Q. How can I confirm that the pore diameter is reduced below 1.0 nm ?
 A. Check that the F-swing is decreasing.
 
+---------- Homogeneous surface ----------[6]
+GCB(I): S(BET)=70.3 m2/g, Vulcan 3G = LGC 2102
+---------- ---------- ---------- ---------- 
+---------- Homogeneous surface ----------[6]
+GCB(II): S(BET)=54.2 m2/g, #3845 (Tokai Carbon Co., Ltd.), Average particle size = 150 nm
+  In the data of P / P0> = 0.85, hysteresis that seems to be capillary condensation in the interparticle voids can be confirmed, and the pore size peak by the BJH method is 60 nm. This range may be excluded from the ƒ¿s plot for analysis.
+  It has been confirmed that the adsorption amount increases linearly in the order of relative pressures 1e-7 to 1e-4 and follows Henry's law.
+Error(alpha-s plot): +-3.0% (P/P0<1e-7), +-2.0% (P/P0:1e-6 - 1e-4), +-1.0% (P/P0:1e-3 - 0.8)
+---------- ---------- ---------- ---------- 
+---------- Heterogeneous surface ----------[6]
+CB: S(BET)=18.18 m2/g, #51 (Asahi Carbon Co., Ltd. ),  Average particle size = 40 nm
+  In the data of P / P0> = 0.90, hysteresis that seems to be capillary condensation in the interparticle voids can be confirmed, and the pore size peak by the BJH method is 140 nm. This range may be excluded from the ƒ¿s plot for analysis.
+  It has been confirmed that the adsorption amount increases linearly in the order of relative pressures 1e-7 to 1e-4 and follows Henry's law.
+Error(alpha-s plot): +-3.0% (P/P0<1e-7), +-2.0% (P/P0:1e-6 - 1e-4), +-1.5% (P/P0:1e-3 - 1e-2), +-1.0% (P/P0:1e-1 - 0.9)
+---------- ---------- ---------- ---------- 
+
 more info.
 [1] http://adsorption.org/awm/ads/alfa-s.htm
 [2] https://osf.io/zjg8a/
 [3] K. Kaneko, TANSO, 186 (1999) 50-53.
 [4] N. Setoyama, Adsorption News, 113 (2015) 10.
 [5] N. Setoyama et al., TANSO, 179 (1997) 156-166.
+[6] M. Yoshida, 
