@@ -4,7 +4,18 @@
 ## tested with Ubumtu 20.04 LTS, Ubuntu 18.04 LTS and Windows 10.
 
 
-## Install
+## Install (New)
+1. cd ~
+2. sudo apt update
+3. sudo apt -y install python3-pip
+4. pip3 install pygaps==3.1.0
+5. git clone https://github.com/by-student-2017/pyGAPS-python3.7-template.git
+6. cd ~/pyGAPS-python3.7-template
+7.  chmod +x run.sh
+8.  chmod +x run_sequential.sh
+
+
+## Install (old)
 1. cd ~
 2. sudo apt update
 3. sudo apt -y install python3-pip
